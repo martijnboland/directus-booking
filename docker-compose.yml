@@ -1,0 +1,38 @@
+   
+version: '3'
+services:
+  directus:
+    container_name: directus
+    image: directus/directus:latest
+    ports:
+      - 9001:8055
+    volumes:
+      - ./uploads:/directus/uploads
+    networks:
+      - directus
+    depends_on:
+      - database
+    environment:
+      KEY: 'e7cc4bd5-0a35-41ab-aa99-3d26215556fd'
+      SECRET: 'e60c4413-be96-4b64-bf81-cbfb06da5076'
+      TELEMETRY: 'false'
+      LOG_LEVEL: 'debug'
+
+      DB_CLIENT: 'mssql'
+      DB_DATABASE: 'directus-booking'
+      DB_HOST: 'database'
+      DB_PORT: '1433'
+      DB_USER: 'sa'
+      DB_PASSWORD: 'Test@123'
+
+      ADMIN_EMAIL: 'admin@example.com'
+      ADMIN_PASSWORD: 'd1r3ctu5'
+  database:
+    build: ./mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Test@123
+    networks:
+      - directus
+networks:
+  directus:

@@ -29,6 +29,10 @@ services:
       ADMIN_PASSWORD: 'd1r3ctu5'
   database:
     build: ./mssql
+    ports:
+      - 14333:1433
+    volumes:
+      - ./mssql/database:/var/opt/mssql
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Test@123

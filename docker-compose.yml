@@ -3,7 +3,7 @@ version: '3'
 services:
   directus:
     container_name: directus
-    image: directus/directus:latest
+    image: directus/directus:9.5.0
     ports:
       - 9001:8055
     volumes:

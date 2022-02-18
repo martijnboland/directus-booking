@@ -9,6 +9,7 @@ COPY . /usr/src/app
 # Add execute permissions
 USER root
 RUN chown -R mssql /usr/src/app
+RUN chmod +x /usr/src/app/*.sh
 USER mssql
 
 # Expose port 1433 in case accessing from other container

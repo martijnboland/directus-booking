@@ -175,7 +175,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: null
+      sort: 1
       width: full
       translations: null
       note: null
@@ -213,7 +213,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: null
+      sort: 2
       width: half
       translations: null
       note: null
@@ -251,7 +251,7 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: null
+      sort: 3
       width: half
       translations: null
       note: null
@@ -289,7 +289,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: null
+      sort: 4
       width: half
       translations: null
       note: null
@@ -327,7 +327,7 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: null
+      sort: 5
       width: half
       translations: null
       note: null
@@ -363,48 +363,12 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 6
       width: full
       translations: null
       note: null
       conditions: null
       required: true
-      group: null
-  - collection: services
-    field: description
-    type: string
-    schema:
-      table: services
-      name: description
-      data_type: nvarchar
-      max_length: -0.5
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: description
-      special: null
-      interface: input-multiline
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
       group: null
   - collection: services
     field: duration
@@ -437,7 +401,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 8
       width: half
       translations: null
       note: null
@@ -473,12 +437,49 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 9
       width: half
       translations: null
       note: null
       conditions: null
       required: true
+      group: null
+  - collection: services
+    field: description
+    type: string
+    schema:
+      table: services
+      name: description
+      data_type: nvarchar
+      max_length: 1000
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      default_value: null
+      is_primary_key: false
+      is_unique: false
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+      is_generated: false
+      generation_expression: null
+    meta:
+      collection: services
+      field: description
+      special: null
+      interface: null
+      options:
+        softLength: 1000
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 7
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
       group: null
   - collection: employees
     field: id

@@ -6,6 +6,8 @@ RUN mkdir -p snapshots
 
 VOLUME /directus/snapshots
 
+COPY ./snapshots/booking-start.yaml /directus/snapshots
+
 EXPOSE 8055
 
 CMD \

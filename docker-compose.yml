@@ -9,6 +9,7 @@ services:
     volumes:
       - ./directus/uploads:/directus/uploads
       - ./directus/snapshots:/directus/snapshots
+      - ./directus/extensions:/directus/extensions
     networks:
       - directus
     depends_on:
@@ -28,6 +29,8 @@ services:
 
       ADMIN_EMAIL: 'admin@example.com'
       ADMIN_PASSWORD: 'd1r3ctu5'
+
+      EXTENSIONS_AUTO_RELOAD: 'true'
   database:
     build: ./mssql
     ports:

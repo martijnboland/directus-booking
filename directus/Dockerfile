@@ -8,6 +8,8 @@ VOLUME /directus/snapshots
 
 COPY ./snapshots/booking-start.yaml /directus/snapshots
 
+COPY ./extensions/ /directus/extensions
+
 EXPOSE 8055
 
 CMD \

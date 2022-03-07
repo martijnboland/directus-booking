@@ -3,12 +3,12 @@ version: '3'
 services:
   directus:
     container_name: directus
-    build: .
+    build: ./directus
     ports:
       - 9001:8055
     volumes:
-      - ./uploads:/directus/uploads
-      - ./snapshots:/directus/snapshots
+      - ./directus/uploads:/directus/uploads
+      - ./directus/snapshots:/directus/snapshots
     networks:
       - directus
     depends_on:

@@ -8,10 +8,16 @@
   },
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "vuedraggable": "^2.24.3"
+  },
   "devDependencies": {
-    "@directus/extensions-sdk": "^9.6.0"
+    "@directus/extensions-sdk": "^9.6.0",
+    "sass": "^1.49.9"
   },
   "workspaces": [
-    "./custom-interface"
+    "./custom-interface",
+    "./files-with-folder"
   ]
 }

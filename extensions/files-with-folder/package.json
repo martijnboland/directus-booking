@@ -1,5 +1,5 @@
 {
-	"name": "directus-extension-custom-interface",
+	"name": "directus-extension-files-with-folder",
 	"version": "1.0.0",
 	"keywords": [
 		"directus",
@@ -8,7 +8,7 @@
 	],
 	"directus:extension": {
 		"type": "interface",
-		"path": "../../directus/extensions/interfaces/custom-interface/index.js",
+		"path": "../../directus/extensions/interfaces/files-with-folder/index.js",
 		"source": "src/index.ts",
 		"host": "^9.6.0"
 	},

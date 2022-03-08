@@ -23527,12 +23527,10 @@ function useRelation(collection, field) {
  * addRelatedPrimaryKeyToFields(collection, fields);
  * // => ['title', 'user.name', 'user.id'];
  */
-function addRelatedPrimaryKeyToFields(currentCollection, fields) {
+function addRelatedPrimaryKeyToFields(currentCollection, fields, fieldsStore) {
     var _a;
     if (!(fields === null || fields === void 0 ? void 0 : fields.length))
         return [];
-    const { useFieldsStore } = useStores$1();
-    const fieldsStore = useFieldsStore();
     const sanitizedFields = [];
     for (const fieldName of fields) {
         sanitizedFields.push(fieldName);
@@ -23566,6 +23564,7 @@ function usePreview(value, fields, relation, getNewSelectedItems, getUpdatedItem
     const initialItems = ref([]);
     const items = ref([]);
     const error = ref(null);
+    const api = useApi();
     watch(() => value.value, async (newVal, oldVal) => {
         if (newVal === null) {
             items.value = [];
@@ -23696,8 +23695,7 @@ function usePreview(value, fields, relation, getNewSelectedItems, getUpdatedItem
     async function request(collection, fields, filteredField, primaryKeys) {
         if (fields === null || fields.length === 0 || primaryKeys === null || primaryKeys.length === 0)
             return [];
-        const fieldsToFetch = addRelatedPrimaryKeyToFields(collection, fields);
-        const api = useApi();
+        const fieldsToFetch = addRelatedPrimaryKeyToFields(collection, fields, fieldsStore);
         const response = await api.get(getEndpoint(collection), {
             params: {
                 fields: fieldsToFetch,

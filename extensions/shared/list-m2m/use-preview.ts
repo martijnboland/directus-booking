@@ -25,7 +25,6 @@ export default function usePreview(
 ): UsablePreview {
 	// Using a ref for the table headers here means that the table itself can update the
 	// values if it needs to. This allows the user to manually resize the columns for example
-
 	const { useFieldsStore } = useStores();
 	const fieldsStore = useFieldsStore();
 	const tableHeaders = ref<any>([]);
@@ -33,6 +32,7 @@ export default function usePreview(
 	const initialItems = ref<Record<string, any>[]>([]);
 	const items = ref<Record<string, any>[]>([]);
 	const error = ref<any>(null);
+	const api = useApi();
 
 	watch(
 		() => value.value,
@@ -200,9 +200,7 @@ export default function usePreview(
 	) {
 		if (fields === null || fields.length === 0 || primaryKeys === null || primaryKeys.length === 0) return [];
 
-		const fieldsToFetch = addRelatedPrimaryKeyToFields(collection, fields);
-
-		const api = useApi();
+		const fieldsToFetch = addRelatedPrimaryKeyToFields(collection, fields, fieldsStore);
 		const response = await api.get(getEndpoint(collection), {
 			params: {
 				fields: fieldsToFetch,

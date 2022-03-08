@@ -1,4 +1,5 @@
 import { useStores } from '@directus/extensions-sdk';
+import {  } from '@directus/shared/types';
 
 /**
  * Adds the primary key field for any passed relational dot-notation field to the array of fields.
@@ -12,11 +13,8 @@ import { useStores } from '@directus/extensions-sdk';
  * addRelatedPrimaryKeyToFields(collection, fields);
  * // => ['title', 'user.name', 'user.id'];
  */
-export function addRelatedPrimaryKeyToFields(currentCollection: string, fields: string[]): string[] {
+export function addRelatedPrimaryKeyToFields(currentCollection: string, fields: string[], fieldsStore: any): string[] {
 	if (!fields?.length) return [];
-
-	const { useFieldsStore } = useStores();
-	const fieldsStore = useFieldsStore();
 
 	const sanitizedFields: string[] = [];
 

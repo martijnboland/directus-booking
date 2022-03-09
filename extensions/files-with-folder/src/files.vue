@@ -102,7 +102,7 @@
 </template>
 
 <script lang="ts">
-import { getFieldsFromTemplate, useApi } from '@directus/extensions-sdk';
+import { getFieldsFromTemplate, useApi, useStores } from '@directus/extensions-sdk';
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed, PropType, toRefs, ref } from 'vue';
 import Draggable from 'vuedraggable';
@@ -162,6 +162,7 @@ export default defineComponent({
 	},
 	emits: ['input'],
 	setup(props, { emit }) {
+		
 		const { t } = useI18n();
 
 		const { value, collection, field } = toRefs(props);

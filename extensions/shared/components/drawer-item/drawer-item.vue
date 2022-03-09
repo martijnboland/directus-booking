@@ -114,6 +114,7 @@ export default defineComponent({
 	setup(props, { emit }) {
 		const { t, te } = useI18n();
 
+		const api = useApi();
 		const { useFieldsStore, useRelationsStore } = useStores();
 		const fieldsStore = useFieldsStore();
 		const relationsStore = useRelationsStore();
@@ -304,7 +305,6 @@ export default defineComponent({
 				}
 
 				try {
-					const api = useApi();
 					const response = await api.get(endpoint, { params: { fields } });
 
 					item.value = response.data.data;
@@ -325,7 +325,6 @@ export default defineComponent({
 					: `/items/${collection}/${encodeURIComponent(props.relatedPrimaryKey)}`;
 
 				try {
-					const api = useApi();
 					const response = await api.get(endpoint);
 
 					item.value = {

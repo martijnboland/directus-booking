@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "Extensions workspace",
   "scripts": {
-    "watch": "npm run watch --workspaces",
     "build": "npm run build --workspaces"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.21",
-    "vuedraggable": "^2.24.3"
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@directus/extensions-sdk": "^9.6.0",

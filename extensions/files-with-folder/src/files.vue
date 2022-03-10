@@ -45,6 +45,11 @@
 			</draggable>
 		</v-list>
 
+		<div>
+			<div class="label type-label">{{ t('folder') }}</div>
+			<folder :value="folder" @input="setFolder"></folder>
+		</div>
+
 		<div v-if="!disabled" class="actions">
 			<v-button v-if="enableCreate && createAllowed" @click="showUpload = true">{{ t('upload_file') }}</v-button>
 			<v-button v-if="enableSelect && selectAllowed" @click="selectModalActive = true">
@@ -119,9 +124,10 @@ import useDirectusToken from '../../shared/composables/use-directus-token';
 import DrawerCollection from '../../shared/components/drawer-collection';
 import DrawerItem from '../../shared/components/drawer-item';
 import { get } from 'lodash';
+import Folder from '../../shared/components/folder';
 
 export default defineComponent({
-	components: { DrawerItem, DrawerCollection, Draggable },
+	components: { DrawerItem, DrawerCollection, Draggable, Folder },
 	props: {
 		value: {
 			type: Array as PropType<(number | string | Record<string, any>)[] | null>,
@@ -233,6 +239,12 @@ export default defineComponent({
 			return addTokenToURL(getRootPath() + `assets/${relatedPrimaryKey.value}`, getToken());
 		});
 
+		const folder = ref();
+		const setFolder = (value) => {
+			console.log('folder => ', value);
+			folder.value = value;
+		}
+
 		return {
 			t,
 			junction,
@@ -264,6 +276,8 @@ export default defineComponent({
 			onUpload,
 			showUpload,
 			downloadUrl,
+			folder,
+			setFolder
 		};
 
 		function emitter(newVal: any[] | null) {

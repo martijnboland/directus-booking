@@ -283,7 +283,7 @@ function toggleClass(el, name, state) {
   }
 }
 
-function css$5(el, prop, val) {
+function css$6(el, prop, val) {
   var style = el && el.style;
 
   if (style) {
@@ -312,7 +312,7 @@ function matrix(el, selfOnly) {
     appliedTransforms = el;
   } else {
     do {
-      var transform = css$5(el, 'transform');
+      var transform = css$6(el, 'transform');
 
       if (transform && transform !== 'none') {
         appliedTransforms = transform + ' ' + appliedTransforms;
@@ -394,11 +394,11 @@ function getRect(el, relativeToContainingBlock, relativeToNonStaticParent, undoS
 
     if (!IE11OrLess) {
       do {
-        if (container && container.getBoundingClientRect && (css$5(container, 'transform') !== 'none' || relativeToNonStaticParent && css$5(container, 'position') !== 'static')) {
+        if (container && container.getBoundingClientRect && (css$6(container, 'transform') !== 'none' || relativeToNonStaticParent && css$6(container, 'position') !== 'static')) {
           var containerRect = container.getBoundingClientRect(); // Set relative to edges of padding box of container
 
-          top -= containerRect.top + parseInt(css$5(container, 'border-top-width'));
-          left -= containerRect.left + parseInt(css$5(container, 'border-left-width'));
+          top -= containerRect.top + parseInt(css$6(container, 'border-top-width'));
+          left -= containerRect.left + parseInt(css$6(container, 'border-left-width'));
           bottom = top + elRect.height;
           right = left + elRect.width;
           break;
@@ -505,7 +505,7 @@ function getChild(el, childNum, options, includeDragEl) {
 function lastChild(el, selector) {
   var last = el.lastElementChild;
 
-  while (last && (last === Sortable.ghost || css$5(last, 'display') === 'none' || selector && !matches(last, selector))) {
+  while (last && (last === Sortable.ghost || css$6(last, 'display') === 'none' || selector && !matches(last, selector))) {
     last = last.previousElementSibling;
   }
 
@@ -591,7 +591,7 @@ function getParentAutoScrollElement(el, includeSelf) {
   do {
     // we don't need to get elem css if it isn't even overflowing in the first place (performance)
     if (elem.clientWidth < elem.scrollWidth || elem.clientHeight < elem.scrollHeight) {
-      var elemCSS = css$5(elem);
+      var elemCSS = css$6(elem);
 
       if (elem.clientWidth < elem.scrollWidth && (elemCSS.overflowX == 'auto' || elemCSS.overflowX == 'scroll') || elem.clientHeight < elem.scrollHeight && (elemCSS.overflowY == 'auto' || elemCSS.overflowY == 'scroll')) {
         if (!elem.getBoundingClientRect || elem === document.body) return getWindowScrollingElement();
@@ -667,19 +667,19 @@ function clone(el) {
 }
 
 function setRect(el, rect) {
-  css$5(el, 'position', 'absolute');
-  css$5(el, 'top', rect.top);
-  css$5(el, 'left', rect.left);
-  css$5(el, 'width', rect.width);
-  css$5(el, 'height', rect.height);
+  css$6(el, 'position', 'absolute');
+  css$6(el, 'top', rect.top);
+  css$6(el, 'left', rect.left);
+  css$6(el, 'width', rect.width);
+  css$6(el, 'height', rect.height);
 }
 
 function unsetRect(el) {
-  css$5(el, 'position', '');
-  css$5(el, 'top', '');
-  css$5(el, 'left', '');
-  css$5(el, 'width', '');
-  css$5(el, 'height', '');
+  css$6(el, 'position', '');
+  css$6(el, 'top', '');
+  css$6(el, 'left', '');
+  css$6(el, 'width', '');
+  css$6(el, 'height', '');
 }
 
 var expando = 'Sortable' + new Date().getTime();
@@ -693,7 +693,7 @@ function AnimationStateManager() {
       if (!this.options.animation) return;
       var children = [].slice.call(this.el.children);
       children.forEach(function (child) {
-        if (css$5(child, 'display') === 'none' || child === Sortable.ghost) return;
+        if (css$6(child, 'display') === 'none' || child === Sortable.ghost) return;
         animationStates.push({
           target: child,
           rect: getRect(child)
@@ -800,8 +800,8 @@ function AnimationStateManager() {
     },
     animate: function animate(target, currentRect, toRect, duration) {
       if (duration) {
-        css$5(target, 'transition', '');
-        css$5(target, 'transform', '');
+        css$6(target, 'transition', '');
+        css$6(target, 'transform', '');
         var elMatrix = matrix(this.el),
             scaleX = elMatrix && elMatrix.a,
             scaleY = elMatrix && elMatrix.d,
@@ -809,15 +809,15 @@ function AnimationStateManager() {
             translateY = (currentRect.top - toRect.top) / (scaleY || 1);
         target.animatingX = !!translateX;
         target.animatingY = !!translateY;
-        css$5(target, 'transform', 'translate3d(' + translateX + 'px,' + translateY + 'px,0)');
+        css$6(target, 'transform', 'translate3d(' + translateX + 'px,' + translateY + 'px,0)');
         this.forRepaintDummy = repaint(target); // repaint
 
-        css$5(target, 'transition', 'transform ' + duration + 'ms' + (this.options.easing ? ' ' + this.options.easing : ''));
-        css$5(target, 'transform', 'translate3d(0,0,0)');
+        css$6(target, 'transition', 'transform ' + duration + 'ms' + (this.options.easing ? ' ' + this.options.easing : ''));
+        css$6(target, 'transform', 'translate3d(0,0,0)');
         typeof target.animated === 'number' && clearTimeout(target.animated);
         target.animated = setTimeout(function () {
-          css$5(target, 'transition', '');
-          css$5(target, 'transform', '');
+          css$6(target, 'transition', '');
+          css$6(target, 'transform', '');
           target.animated = false;
           target.animatingX = false;
           target.animatingY = false;
@@ -1093,12 +1093,12 @@ supportDraggable = documentExists && !ChromeForAndroid && !IOS && 'draggable' in
   return el.style.pointerEvents === 'auto';
 }(),
     _detectDirection = function _detectDirection(el, options) {
-  var elCSS = css$5(el),
+  var elCSS = css$6(el),
       elWidth = parseInt(elCSS.width) - parseInt(elCSS.paddingLeft) - parseInt(elCSS.paddingRight) - parseInt(elCSS.borderLeftWidth) - parseInt(elCSS.borderRightWidth),
       child1 = getChild(el, 0, options),
       child2 = getChild(el, 1, options),
-      firstChildCSS = child1 && css$5(child1),
-      secondChildCSS = child2 && css$5(child2),
+      firstChildCSS = child1 && css$6(child1),
+      secondChildCSS = child2 && css$6(child2),
       firstChildWidth = firstChildCSS && parseInt(firstChildCSS.marginLeft) + parseInt(firstChildCSS.marginRight) + getRect(child1).width,
       secondChildWidth = secondChildCSS && parseInt(secondChildCSS.marginLeft) + parseInt(secondChildCSS.marginRight) + getRect(child2).width;
 
@@ -1187,12 +1187,12 @@ _detectNearestEmptySortable = function _detectNearestEmptySortable(x, y) {
 },
     _hideGhostForTarget = function _hideGhostForTarget() {
   if (!supportCssPointerEvents && ghostEl) {
-    css$5(ghostEl, 'display', 'none');
+    css$6(ghostEl, 'display', 'none');
   }
 },
     _unhideGhostForTarget = function _unhideGhostForTarget() {
   if (!supportCssPointerEvents && ghostEl) {
-    css$5(ghostEl, 'display', '');
+    css$6(ghostEl, 'display', '');
   }
 }; // #1184 fix - Prevent click event on fallback if dragged but item not changed position
 
@@ -1732,10 +1732,10 @@ Sortable.prototype =
         }
 
         var cssMatrix = "matrix(".concat(ghostMatrix.a, ",").concat(ghostMatrix.b, ",").concat(ghostMatrix.c, ",").concat(ghostMatrix.d, ",").concat(ghostMatrix.e, ",").concat(ghostMatrix.f, ")");
-        css$5(ghostEl, 'webkitTransform', cssMatrix);
-        css$5(ghostEl, 'mozTransform', cssMatrix);
-        css$5(ghostEl, 'msTransform', cssMatrix);
-        css$5(ghostEl, 'transform', cssMatrix);
+        css$6(ghostEl, 'webkitTransform', cssMatrix);
+        css$6(ghostEl, 'mozTransform', cssMatrix);
+        css$6(ghostEl, 'msTransform', cssMatrix);
+        css$6(ghostEl, 'transform', cssMatrix);
         lastDx = dx;
         lastDy = dy;
         touchEvt = touch;
@@ -1756,7 +1756,7 @@ Sortable.prototype =
         // Get relatively positioned parent
         ghostRelativeParent = container;
 
-        while (css$5(ghostRelativeParent, 'position') === 'static' && css$5(ghostRelativeParent, 'transform') === 'none' && ghostRelativeParent !== document) {
+        while (css$6(ghostRelativeParent, 'position') === 'static' && css$6(ghostRelativeParent, 'transform') === 'none' && ghostRelativeParent !== document) {
           ghostRelativeParent = ghostRelativeParent.parentNode;
         }
 
@@ -1775,22 +1775,22 @@ Sortable.prototype =
       toggleClass(ghostEl, options.ghostClass, false);
       toggleClass(ghostEl, options.fallbackClass, true);
       toggleClass(ghostEl, options.dragClass, true);
-      css$5(ghostEl, 'transition', '');
-      css$5(ghostEl, 'transform', '');
-      css$5(ghostEl, 'box-sizing', 'border-box');
-      css$5(ghostEl, 'margin', 0);
-      css$5(ghostEl, 'top', rect.top);
-      css$5(ghostEl, 'left', rect.left);
-      css$5(ghostEl, 'width', rect.width);
-      css$5(ghostEl, 'height', rect.height);
-      css$5(ghostEl, 'opacity', '0.8');
-      css$5(ghostEl, 'position', PositionGhostAbsolutely ? 'absolute' : 'fixed');
-      css$5(ghostEl, 'zIndex', '100000');
-      css$5(ghostEl, 'pointerEvents', 'none');
+      css$6(ghostEl, 'transition', '');
+      css$6(ghostEl, 'transform', '');
+      css$6(ghostEl, 'box-sizing', 'border-box');
+      css$6(ghostEl, 'margin', 0);
+      css$6(ghostEl, 'top', rect.top);
+      css$6(ghostEl, 'left', rect.left);
+      css$6(ghostEl, 'width', rect.width);
+      css$6(ghostEl, 'height', rect.height);
+      css$6(ghostEl, 'opacity', '0.8');
+      css$6(ghostEl, 'position', PositionGhostAbsolutely ? 'absolute' : 'fixed');
+      css$6(ghostEl, 'zIndex', '100000');
+      css$6(ghostEl, 'pointerEvents', 'none');
       Sortable.ghost = ghostEl;
       container.appendChild(ghostEl); // Set transform-origin
 
-      css$5(ghostEl, 'transform-origin', tapDistanceLeft / parseInt(ghostEl.style.width) * 100 + '% ' + tapDistanceTop / parseInt(ghostEl.style.height) * 100 + '%');
+      css$6(ghostEl, 'transform-origin', tapDistanceLeft / parseInt(ghostEl.style.width) * 100 + '% ' + tapDistanceTop / parseInt(ghostEl.style.height) * 100 + '%');
     }
   },
   _onDragStart: function _onDragStart(
@@ -1859,7 +1859,7 @@ Sortable.prototype =
 
       on(document, 'drop', _this); // #1276 fix:
 
-      css$5(dragEl, 'transform', 'translateZ(0)');
+      css$6(dragEl, 'transform', 'translateZ(0)');
     }
 
     awaitingDragStarted = true;
@@ -1868,7 +1868,7 @@ Sortable.prototype =
     moved = true;
 
     if (Safari) {
-      css$5(document.body, 'user-select', 'none');
+      css$6(document.body, 'user-select', 'none');
     }
   },
   // Returns true - if no further action is needed (either inserted or another condition)
@@ -2108,7 +2108,7 @@ Sortable.prototype =
           do {
             dragIndex -= direction;
             sibling = parentEl.children[dragIndex];
-          } while (sibling && (css$5(sibling, 'display') === 'none' || sibling === ghostEl));
+          } while (sibling && (css$6(sibling, 'display') === 'none' || sibling === ghostEl));
         } // If dragEl is already beside target: Do not insert
 
 
@@ -2223,10 +2223,10 @@ Sortable.prototype =
     this._offUpEvents();
 
     if (Safari) {
-      css$5(document.body, 'user-select', '');
+      css$6(document.body, 'user-select', '');
     }
 
-    css$5(dragEl, 'transform', '');
+    css$6(dragEl, 'transform', '');
 
     if (evt) {
       if (moved) {
@@ -2503,7 +2503,7 @@ Sortable.prototype =
     if (!cloneHidden) {
       pluginEvent('hideClone', this);
       if (Sortable.eventCanceled) return;
-      css$5(cloneEl, 'display', 'none');
+      css$6(cloneEl, 'display', 'none');
 
       if (this.options.removeCloneOnHide && cloneEl.parentNode) {
         cloneEl.parentNode.removeChild(cloneEl);
@@ -2535,7 +2535,7 @@ Sortable.prototype =
         this.animate(dragEl, cloneEl);
       }
 
-      css$5(cloneEl, 'display', '');
+      css$6(cloneEl, 'display', '');
       cloneHidden = false;
     }
   }
@@ -2716,7 +2716,7 @@ if (documentExists) {
 Sortable.utils = {
   on: on,
   off: off,
-  css: css$5,
+  css: css$6,
   find: find,
   is: function is(el, selector) {
     return !!closest(el, selector, el, false);
@@ -2944,7 +2944,7 @@ var autoScroll = throttle(function (evt, options, rootEl, isFallback) {
         canScrollY = void 0,
         scrollWidth = el.scrollWidth,
         scrollHeight = el.scrollHeight,
-        elCSS = css$5(el),
+        elCSS = css$6(el),
         scrollPosX = el.scrollLeft,
         scrollPosY = el.scrollTop;
 
@@ -3280,7 +3280,7 @@ function MultiDragPlugin() {
       if (!this.isMultiDrag) return;
       insertMultiDragClones(false, rootEl);
       multiDragClones.forEach(function (clone) {
-        css$5(clone, 'display', '');
+        css$6(clone, 'display', '');
       });
       cloneNowShown();
       clonesHidden = false;
@@ -3294,7 +3294,7 @@ function MultiDragPlugin() {
           cancel = _ref5.cancel;
       if (!this.isMultiDrag) return;
       multiDragClones.forEach(function (clone) {
-        css$5(clone, 'display', 'none');
+        css$6(clone, 'display', 'none');
 
         if (_this.options.removeCloneOnHide && clone.parentNode) {
           clone.parentNode.removeChild(clone);
@@ -3338,7 +3338,7 @@ function MultiDragPlugin() {
         if (this.options.animation) {
           multiDragElements.forEach(function (multiDragElement) {
             if (multiDragElement === dragEl$1) return;
-            css$5(multiDragElement, 'position', 'absolute');
+            css$6(multiDragElement, 'position', 'absolute');
           });
           var dragRect = getRect(dragEl$1, false, true, true);
           multiDragElements.forEach(function (multiDragElement) {
@@ -27094,7 +27094,7 @@ function useElementSize(target) {
     return { width, height };
 }
 
-var script$4 = defineComponent({
+var script$6 = defineComponent({
     props: {
         modelValue: {
             type: String,
@@ -27206,7 +27206,7 @@ const _hoisted_2$3 = {
   class: "filter"
 };
 
-function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_v_icon = resolveComponent("v-icon");
   const _component_interface_system_filter = resolveComponent("interface-system-filter");
   const _component_transition_expand = resolveComponent("transition-expand");
@@ -27299,15 +27299,15 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
 
 var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
 
-var css$4 = ".search-badge[data-v-659dc93c] {\n  --v-badge-background-color: var(--primary);\n  --v-badge-offset-y: 8px;\n  --v-badge-offset-x: 8px;\n}\n.search-input[data-v-659dc93c] {\n  display: flex;\n  align-items: center;\n  width: 72px;\n  max-width: 100%;\n  height: 44px;\n  overflow: hidden;\n  border: 2px solid var(--border-normal);\n  border-radius: 22px;\n  transition: width var(--slow) var(--transition), border-bottom-left-radius var(--fast) var(--transition), border-bottom-right-radius var(--fast) var(--transition);\n}\n.search-input .icon-empty[data-v-659dc93c] {\n  --v-icon-color: var(--foreground-subdued);\n  display: none;\n  margin-left: 8px;\n}\n.search-input .icon-empty[data-v-659dc93c]:hover {\n  --v-icon-color: var(--danger);\n}\n.search-input .icon-search[data-v-659dc93c],\n.search-input .icon-filter[data-v-659dc93c] {\n  --v-icon-color-hover: var(--primary);\n}\n.search-input .icon-search[data-v-659dc93c] {\n  margin: 0 8px;\n  margin-right: 4px;\n}\n.search-input .icon-filter[data-v-659dc93c] {\n  margin: 0 8px;\n  margin-left: 0;\n}\n.search-input[data-v-659dc93c]:hover {\n  border-color: var(--border-normal-alt);\n}\n.search-input.has-content[data-v-659dc93c] {\n  width: 200px;\n}\n.search-input.has-content .icon-empty[data-v-659dc93c] {\n  display: block;\n}\n.search-input.has-content .icon-filter[data-v-659dc93c] {\n  margin-left: 0;\n}\n.search-input.active[data-v-659dc93c] {\n  width: 300px;\n  border-color: var(--border-normal);\n}\n.search-input.active .icon-empty[data-v-659dc93c] {\n  display: block;\n}\n.search-input.filter-active[data-v-659dc93c] {\n  width: 200px;\n}\n.search-input.filter-active .icon-filter[data-v-659dc93c] {\n  --v-icon-color: var(--primary);\n}\n@media (min-width: 600px) {\n.search-input.filter-active[data-v-659dc93c] {\n    width: 250px;\n}\n}\n@media (min-width: 960px) {\n.search-input.filter-active[data-v-659dc93c] {\n    width: 300px;\n}\n}\n@media (min-width: 1260px) {\n.search-input.filter-active[data-v-659dc93c] {\n    width: 420px;\n}\n}\n.search-input.filter-border[data-v-659dc93c] {\n  padding-bottom: 2px;\n  border-bottom: none;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n  transition: border-bottom-left-radius none, border-bottom-right-radius none;\n}\n.search-input.filter-border[data-v-659dc93c]::after {\n  position: absolute;\n  right: 2px;\n  bottom: -2px;\n  left: 2px;\n  width: auto;\n  height: 2px;\n  background-color: var(--border-subdued);\n  content: \"\";\n  pointer-events: none;\n}\n.search-input input[data-v-659dc93c] {\n  flex-grow: 1;\n  width: 0px;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  color: var(--foreground-normal);\n  text-overflow: ellipsis;\n  background-color: var(--background-page);\n  border: none;\n  border-radius: 0;\n}\n.search-input input[data-v-659dc93c]::placeholder {\n  color: var(--foreground-subdued);\n}\n.value[data-v-659dc93c] {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.filter[data-v-659dc93c] {\n  position: absolute;\n  top: 100%;\n  right: 0;\n  width: auto;\n  min-width: 100%;\n  padding: 0;\n  background-color: var(--background-subdued);\n  border: 2px solid var(--border-normal);\n  border-bottom-right-radius: 22px;\n  border-bottom-left-radius: 22px;\n}\n.filter-input[data-v-659dc93c] {\n  margin: 10px 8px;\n}";
-n(css$4,{});
+var css$5 = ".search-badge[data-v-659dc93c] {\n  --v-badge-background-color: var(--primary);\n  --v-badge-offset-y: 8px;\n  --v-badge-offset-x: 8px;\n}\n.search-input[data-v-659dc93c] {\n  display: flex;\n  align-items: center;\n  width: 72px;\n  max-width: 100%;\n  height: 44px;\n  overflow: hidden;\n  border: 2px solid var(--border-normal);\n  border-radius: 22px;\n  transition: width var(--slow) var(--transition), border-bottom-left-radius var(--fast) var(--transition), border-bottom-right-radius var(--fast) var(--transition);\n}\n.search-input .icon-empty[data-v-659dc93c] {\n  --v-icon-color: var(--foreground-subdued);\n  display: none;\n  margin-left: 8px;\n}\n.search-input .icon-empty[data-v-659dc93c]:hover {\n  --v-icon-color: var(--danger);\n}\n.search-input .icon-search[data-v-659dc93c],\n.search-input .icon-filter[data-v-659dc93c] {\n  --v-icon-color-hover: var(--primary);\n}\n.search-input .icon-search[data-v-659dc93c] {\n  margin: 0 8px;\n  margin-right: 4px;\n}\n.search-input .icon-filter[data-v-659dc93c] {\n  margin: 0 8px;\n  margin-left: 0;\n}\n.search-input[data-v-659dc93c]:hover {\n  border-color: var(--border-normal-alt);\n}\n.search-input.has-content[data-v-659dc93c] {\n  width: 200px;\n}\n.search-input.has-content .icon-empty[data-v-659dc93c] {\n  display: block;\n}\n.search-input.has-content .icon-filter[data-v-659dc93c] {\n  margin-left: 0;\n}\n.search-input.active[data-v-659dc93c] {\n  width: 300px;\n  border-color: var(--border-normal);\n}\n.search-input.active .icon-empty[data-v-659dc93c] {\n  display: block;\n}\n.search-input.filter-active[data-v-659dc93c] {\n  width: 200px;\n}\n.search-input.filter-active .icon-filter[data-v-659dc93c] {\n  --v-icon-color: var(--primary);\n}\n@media (min-width: 600px) {\n.search-input.filter-active[data-v-659dc93c] {\n    width: 250px;\n}\n}\n@media (min-width: 960px) {\n.search-input.filter-active[data-v-659dc93c] {\n    width: 300px;\n}\n}\n@media (min-width: 1260px) {\n.search-input.filter-active[data-v-659dc93c] {\n    width: 420px;\n}\n}\n.search-input.filter-border[data-v-659dc93c] {\n  padding-bottom: 2px;\n  border-bottom: none;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n  transition: border-bottom-left-radius none, border-bottom-right-radius none;\n}\n.search-input.filter-border[data-v-659dc93c]::after {\n  position: absolute;\n  right: 2px;\n  bottom: -2px;\n  left: 2px;\n  width: auto;\n  height: 2px;\n  background-color: var(--border-subdued);\n  content: \"\";\n  pointer-events: none;\n}\n.search-input input[data-v-659dc93c] {\n  flex-grow: 1;\n  width: 0px;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  color: var(--foreground-normal);\n  text-overflow: ellipsis;\n  background-color: var(--background-page);\n  border: none;\n  border-radius: 0;\n}\n.search-input input[data-v-659dc93c]::placeholder {\n  color: var(--foreground-subdued);\n}\n.value[data-v-659dc93c] {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.filter[data-v-659dc93c] {\n  position: absolute;\n  top: 100%;\n  right: 0;\n  width: auto;\n  min-width: 100%;\n  padding: 0;\n  background-color: var(--background-subdued);\n  border: 2px solid var(--border-normal);\n  border-bottom-right-radius: 22px;\n  border-bottom-left-radius: 22px;\n}\n.filter-input[data-v-659dc93c] {\n  margin: 10px 8px;\n}";
+n(css$5,{});
 
-script$4.render = render$4;
-script$4.__scopeId = "data-v-659dc93c";
-script$4.__file = "shared/components/search-input/search-input.vue";
+script$6.render = render$6;
+script$6.__scopeId = "data-v-659dc93c";
+script$6.__file = "shared/components/search-input/search-input.vue";
 
-var script$3 = defineComponent({
-    components: { SearchInput: script$4 },
+var script$5 = defineComponent({
+    components: { SearchInput: script$6 },
     props: {
         active: {
             type: Boolean,
@@ -27438,7 +27438,7 @@ var script$3 = defineComponent({
     },
 });
 
-function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_v_breadcrumb = resolveComponent("v-breadcrumb");
   const _component_v_icon = resolveComponent("v-icon");
   const _component_v_button = resolveComponent("v-button");
@@ -27544,14 +27544,14 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8 /* PROPS */, ["selection", "layout-options", "layout-query", "filter", "search", "collection", "show-select"]))
 }
 
-var css$3 = ".layout[data-v-5e444010] {\n  --layout-offset-top: 0px;\n}";
-n(css$3,{});
+var css$4 = ".layout[data-v-5e444010] {\n  --layout-offset-top: 0px;\n}";
+n(css$4,{});
 
-script$3.render = render$3;
-script$3.__scopeId = "data-v-5e444010";
-script$3.__file = "shared/components/drawer-collection/drawer-collection.vue";
+script$5.render = render$5;
+script$5.__scopeId = "data-v-5e444010";
+script$5.__file = "shared/components/drawer-collection/drawer-collection.vue";
 
-var script$2 = defineComponent({
+var script$4 = defineComponent({
     props: {
         mime: {
             type: String,
@@ -27606,9 +27606,9 @@ const _hoisted_1$2 = {
 };
 const _hoisted_2$2 = ["src", "width", "height", "alt"];
 const _hoisted_3$1 = ["src"];
-const _hoisted_4 = ["src"];
+const _hoisted_4$1 = ["src"];
 
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_v_icon = resolveComponent("v-icon");
 
   return (_ctx.type && !_ctx.imgError)
@@ -27644,18 +27644,18 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
                   key: 2,
                   controls: "",
                   src: _ctx.src
-                }, null, 8 /* PROPS */, _hoisted_4))
+                }, null, 8 /* PROPS */, _hoisted_4$1))
               : createCommentVNode("v-if", true)
       ]))
     : createCommentVNode("v-if", true)
 }
 
-var css$2 = ".file-preview[data-v-064dc8a2] {\n  position: relative;\n  width: 100%;\n  max-width: calc(var(--form-column-max-width) * 2 + var(--form-horizontal-gap));\n  height: 100%;\n  margin-bottom: var(--form-vertical-gap);\n}\nimg[data-v-064dc8a2],\nvideo[data-v-064dc8a2],\naudio[data-v-064dc8a2] {\n  width: 100%;\n  max-height: 500px;\n  object-fit: contain;\n  border-radius: var(--border-radius);\n}\n.image[data-v-064dc8a2] {\n  width: 100%;\n  height: 100%;\n  cursor: pointer;\n}\n.image.max-size[data-v-064dc8a2] {\n  max-height: 75vh;\n  background-color: var(--background-normal);\n  border-radius: var(--border-radius);\n}\n.image img[data-v-064dc8a2] {\n  z-index: 1;\n  display: block;\n  margin: 0 auto;\n}\n.image .v-icon[data-v-064dc8a2] {\n  position: absolute;\n  right: 12px;\n  bottom: 12px;\n  z-index: 2;\n  color: white;\n  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);\n  opacity: 0;\n  transition: opacity var(--fast) var(--transition);\n}\n.image:hover .v-icon[data-v-064dc8a2] {\n  opacity: 1;\n}\n.svg[data-v-064dc8a2] {\n  padding: 64px;\n  background-color: var(--background-normal);\n  border-radius: var(--border-radius);\n}\n.svg.max-size img[data-v-064dc8a2] {\n  max-height: calc(75vh - 128px);\n}";
-n(css$2,{});
+var css$3 = ".file-preview[data-v-064dc8a2] {\n  position: relative;\n  width: 100%;\n  max-width: calc(var(--form-column-max-width) * 2 + var(--form-horizontal-gap));\n  height: 100%;\n  margin-bottom: var(--form-vertical-gap);\n}\nimg[data-v-064dc8a2],\nvideo[data-v-064dc8a2],\naudio[data-v-064dc8a2] {\n  width: 100%;\n  max-height: 500px;\n  object-fit: contain;\n  border-radius: var(--border-radius);\n}\n.image[data-v-064dc8a2] {\n  width: 100%;\n  height: 100%;\n  cursor: pointer;\n}\n.image.max-size[data-v-064dc8a2] {\n  max-height: 75vh;\n  background-color: var(--background-normal);\n  border-radius: var(--border-radius);\n}\n.image img[data-v-064dc8a2] {\n  z-index: 1;\n  display: block;\n  margin: 0 auto;\n}\n.image .v-icon[data-v-064dc8a2] {\n  position: absolute;\n  right: 12px;\n  bottom: 12px;\n  z-index: 2;\n  color: white;\n  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);\n  opacity: 0;\n  transition: opacity var(--fast) var(--transition);\n}\n.image:hover .v-icon[data-v-064dc8a2] {\n  opacity: 1;\n}\n.svg[data-v-064dc8a2] {\n  padding: 64px;\n  background-color: var(--background-normal);\n  border-radius: var(--border-radius);\n}\n.svg.max-size img[data-v-064dc8a2] {\n  max-height: calc(75vh - 128px);\n}";
+n(css$3,{});
 
-script$2.render = render$2;
-script$2.__scopeId = "data-v-064dc8a2";
-script$2.__file = "shared/components/file-preview/file-preview.vue";
+script$4.render = render$4;
+script$4.__scopeId = "data-v-064dc8a2";
+script$4.__file = "shared/components/file-preview/file-preview.vue";
 
 /**
  * @TODO
@@ -27943,8 +27943,8 @@ function useTemplateData(collection, primaryKey) {
     }
 }
 
-var script$1 = defineComponent({
-    components: { FilePreview: script$2 },
+var script$3 = defineComponent({
+    components: { FilePreview: script$4 },
     props: {
         active: {
             type: Boolean,
@@ -28220,7 +28220,7 @@ const _hoisted_1$1 = {
 };
 const _hoisted_2$1 = { class: "drawer-item-content" };
 
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_v_skeleton_loader = resolveComponent("v-skeleton-loader");
   const _component_render_template = resolveComponent("render-template");
   const _component_v_breadcrumb = resolveComponent("v-breadcrumb");
@@ -28330,15 +28330,335 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   ]), 1032 /* PROPS, DYNAMIC_SLOTS */, ["modelValue", "title", "onCancel"]))
 }
 
-var css$1 = ".v-divider[data-v-3110b322] {\n  margin: 52px 0;\n}\n.drawer-item-content[data-v-3110b322] {\n  padding: var(--content-padding);\n  padding-bottom: var(--content-padding-bottom);\n}";
+var css$2 = ".v-divider[data-v-3110b322] {\n  margin: 52px 0;\n}\n.drawer-item-content[data-v-3110b322] {\n  padding: var(--content-padding);\n  padding-bottom: var(--content-padding-bottom);\n}";
+n(css$2,{});
+
+script$3.render = render$3;
+script$3.__scopeId = "data-v-3110b322";
+script$3.__file = "shared/components/drawer-item/drawer-item.vue";
+
+var script$2 = defineComponent({
+    name: 'FolderListItem',
+    props: {
+        folder: {
+            type: Object,
+            required: true,
+        },
+        currentFolder: {
+            type: String,
+            default: null,
+        },
+        disabled: {
+            type: Boolean,
+            default: false,
+        },
+        disabledFolders: {
+            type: Array,
+            default: () => [],
+        },
+    },
+    emits: ['click'],
+});
+
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_v_icon = resolveComponent("v-icon");
+  const _component_v_list_item_icon = resolveComponent("v-list-item-icon");
+  const _component_v_list_item_content = resolveComponent("v-list-item-content");
+  const _component_v_list_item = resolveComponent("v-list-item");
+  const _component_folder_list_item = resolveComponent("folder-list-item", true);
+  const _component_v_list_group = resolveComponent("v-list-group");
+
+  return (!_ctx.folder.children || _ctx.folder.children.length === 0)
+    ? (openBlock(), createBlock(_component_v_list_item, {
+        key: 0,
+        active: _ctx.currentFolder === _ctx.folder.id,
+        disabled: _ctx.disabled,
+        clickable: "",
+        onClick: _cache[0] || (_cache[0] = $event => (_ctx.$emit('click', _ctx.folder.id)))
+      }, {
+        default: withCtx(() => [
+          createVNode(_component_v_list_item_icon, null, {
+            default: withCtx(() => [
+              createVNode(_component_v_icon, {
+                name: _ctx.currentFolder === _ctx.folder.id ? 'folder_open' : 'folder'
+              }, null, 8 /* PROPS */, ["name"])
+            ]),
+            _: 1 /* STABLE */
+          }),
+          createVNode(_component_v_list_item_content, null, {
+            default: withCtx(() => [
+              createTextVNode(toDisplayString(_ctx.folder.name), 1 /* TEXT */)
+            ]),
+            _: 1 /* STABLE */
+          })
+        ]),
+        _: 1 /* STABLE */
+      }, 8 /* PROPS */, ["active", "disabled"]))
+    : (openBlock(), createBlock(_component_v_list_group, {
+        key: 1,
+        clickable: "",
+        active: _ctx.currentFolder === _ctx.folder.id,
+        disabled: _ctx.disabled,
+        onClick: _cache[2] || (_cache[2] = $event => (_ctx.$emit('click', _ctx.folder.id)))
+      }, {
+        activator: withCtx(() => [
+          createVNode(_component_v_list_item_icon, null, {
+            default: withCtx(() => [
+              createVNode(_component_v_icon, {
+                name: _ctx.currentFolder === _ctx.folder.id ? 'folder_open' : 'folder'
+              }, null, 8 /* PROPS */, ["name"])
+            ]),
+            _: 1 /* STABLE */
+          }),
+          createVNode(_component_v_list_item_content, null, {
+            default: withCtx(() => [
+              createTextVNode(toDisplayString(_ctx.folder.name), 1 /* TEXT */)
+            ]),
+            _: 1 /* STABLE */
+          })
+        ]),
+        default: withCtx(() => [
+          (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.folder.children, (childFolder) => {
+            return (openBlock(), createBlock(_component_folder_list_item, {
+              key: childFolder.id,
+              folder: childFolder,
+              "current-folder": _ctx.currentFolder,
+              disabled: _ctx.disabledFolders.includes(childFolder.id),
+              "disabled-folders": _ctx.disabledFolders,
+              onClick: _cache[1] || (_cache[1] = $event => (_ctx.$emit('click', $event)))
+            }, null, 8 /* PROPS */, ["folder", "current-folder", "disabled", "disabled-folders"]))
+          }), 128 /* KEYED_FRAGMENT */))
+        ]),
+        _: 1 /* STABLE */
+      }, 8 /* PROPS */, ["active", "disabled"]))
+}
+
+script$2.render = render$2;
+script$2.__file = "shared/components/folder/folder-list-item.vue";
+
+let loading = null;
+let folders = null;
+let nestedFolders = null;
+let openFolders = null;
+let error = null;
+function useFolders() {
+    const api = useApi();
+    if (loading === null)
+        loading = ref(false);
+    if (folders === null)
+        folders = ref(null);
+    if (nestedFolders === null)
+        nestedFolders = ref(null);
+    if (error === null)
+        error = ref(null);
+    if (openFolders === null)
+        openFolders = ref(['root']);
+    if (folders.value === null && loading.value === false) {
+        fetchFolders();
+    }
+    return { loading, folders, nestedFolders, error, fetchFolders, openFolders };
+    async function fetchFolders() {
+        if (loading === null)
+            return;
+        if (folders === null)
+            return;
+        if (nestedFolders === null)
+            return;
+        if (error === null)
+            return;
+        loading.value = true;
+        try {
+            const response = await api.get(`/folders`, {
+                params: {
+                    limit: -1,
+                    sort: 'name',
+                },
+            });
+            folders.value = response.data.data;
+            nestedFolders.value = nestFolders(response.data.data);
+        }
+        catch (err) {
+            error.value = err;
+        }
+        finally {
+            loading.value = false;
+        }
+    }
+}
+function nestFolders(rawFolders) {
+    return rawFolders.map((rawFolder) => nestChildren(rawFolder, rawFolders)).filter((folder) => folder.parent === null);
+}
+function nestChildren(rawFolder, rawFolders) {
+    const folder = { ...rawFolder };
+    const children = rawFolders
+        .filter((childFolder) => childFolder.parent === rawFolder.id && childFolder.id !== rawFolder.id)
+        .map((childRawFolder) => nestChildren(childRawFolder, rawFolders));
+    if (children.length > 0) {
+        folder.children = children;
+    }
+    return folder;
+}
+
+var script$1 = defineComponent({
+    components: { FolderListItem: script$2 },
+    props: {
+        value: {
+            type: String,
+            default: undefined,
+        },
+        disabledFolders: {
+            type: Array,
+            default: () => [],
+        },
+        disabled: {
+            type: Boolean,
+            default: false,
+        },
+        placeholder: {
+            type: String,
+            default: '',
+        },
+    },
+    emits: ['input'],
+    setup(props, { emit }) {
+        const { t } = useI18n();
+        const { nestedFolders, folders, loading } = useFolders();
+        const folderPath = computed(() => {
+            if (!props.value || !folders.value) {
+                return t('interfaces.system-folder.root_name');
+            }
+            const folder = folders.value.find((folder) => folder.id === props.value);
+            return folder
+                ? folderParentPath(folder, folders.value)
+                    .map((folder) => folder.name)
+                    .join(' / ')
+                : props.value;
+        });
+        return {
+            emitValue,
+            loading,
+            folderPath,
+            nestedFolders,
+            onFolderSelect,
+            t,
+        };
+        function emitValue(id) {
+            return emit('input', id);
+        }
+        function folderParentPath(folder, folders) {
+            const folderMap = new Map(folders.map((folder) => [folder.id, folder]));
+            const folderParent = (target) => (folderMap.has(target.parent) ? folderParent(folderMap.get(target.parent)) : []).concat(target);
+            return folderParent(folder);
+        }
+        function onFolderSelect(folderId) {
+            if (props.disabled) {
+                return;
+            }
+            emit('input', folderId);
+        }
+    },
+});
+
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_v_skeleton_loader = resolveComponent("v-skeleton-loader");
+  const _component_v_icon = resolveComponent("v-icon");
+  const _component_v_input = resolveComponent("v-input");
+  const _component_v_list_item_icon = resolveComponent("v-list-item-icon");
+  const _component_v_list_item_content = resolveComponent("v-list-item-content");
+  const _component_v_list_item = resolveComponent("v-list-item");
+  const _component_v_divider = resolveComponent("v-divider");
+  const _component_folder_list_item = resolveComponent("folder-list-item");
+  const _component_v_list = resolveComponent("v-list");
+  const _component_v_menu = resolveComponent("v-menu");
+
+  return (_ctx.loading)
+    ? (openBlock(), createBlock(_component_v_skeleton_loader, { key: 0 }))
+    : (openBlock(), createBlock(_component_v_menu, {
+        key: 1,
+        class: "v-select",
+        attached: true,
+        "show-arrow": false,
+        disabled: _ctx.disabled,
+        "close-on-content-click": true
+      }, {
+        activator: withCtx(({ toggle, active }) => [
+          createVNode(_component_v_input, {
+            readonly: "",
+            active: active,
+            "model-value": _ctx.folderPath,
+            placeholder: _ctx.placeholder,
+            disabled: _ctx.disabled,
+            onClick: toggle
+          }, {
+            prepend: withCtx(() => [
+              createVNode(_component_v_icon, {
+                name: !_ctx.value ? 'folder_special' : 'folder_open'
+              }, null, 8 /* PROPS */, ["name"])
+            ]),
+            append: withCtx(() => [
+              createVNode(_component_v_icon, {
+                name: "expand_more",
+                class: normalizeClass({ active })
+              }, null, 8 /* PROPS */, ["class"])
+            ]),
+            _: 2 /* DYNAMIC */
+          }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["active", "model-value", "placeholder", "disabled", "onClick"])
+        ]),
+        default: withCtx(() => [
+          createVNode(_component_v_list, null, {
+            default: withCtx(() => [
+              createVNode(_component_v_list_item, {
+                clickable: "",
+                active: !_ctx.value,
+                onClick: _cache[0] || (_cache[0] = $event => (_ctx.emitValue(null)))
+              }, {
+                default: withCtx(() => [
+                  createVNode(_component_v_list_item_icon, null, {
+                    default: withCtx(() => [
+                      createVNode(_component_v_icon, { name: "folder_special" })
+                    ]),
+                    _: 1 /* STABLE */
+                  }),
+                  createVNode(_component_v_list_item_content, null, {
+                    default: withCtx(() => [
+                      createTextVNode(toDisplayString(_ctx.t('interfaces.system-folder.root_name')), 1 /* TEXT */)
+                    ]),
+                    _: 1 /* STABLE */
+                  })
+                ]),
+                _: 1 /* STABLE */
+              }, 8 /* PROPS */, ["active"]),
+              (_ctx.nestedFolders && _ctx.nestedFolders.length > 0)
+                ? (openBlock(), createBlock(_component_v_divider, { key: 0 }))
+                : createCommentVNode("v-if", true),
+              (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.nestedFolders, (folder) => {
+                return (openBlock(), createBlock(_component_folder_list_item, {
+                  key: folder.id,
+                  clickbable: "",
+                  folder: folder,
+                  "current-folder": _ctx.value,
+                  disabled: _ctx.disabledFolders.includes(folder.id),
+                  "disabled-folders": _ctx.disabledFolders,
+                  onClick: _ctx.emitValue
+                }, null, 8 /* PROPS */, ["folder", "current-folder", "disabled", "disabled-folders", "onClick"]))
+              }), 128 /* KEYED_FRAGMENT */))
+            ]),
+            _: 1 /* STABLE */
+          })
+        ]),
+        _: 1 /* STABLE */
+      }, 8 /* PROPS */, ["disabled"]))
+}
+
+var css$1 = ".v-input[data-v-469dd17c] {\n  cursor: pointer;\n}\n.v-input .v-icon[data-v-469dd17c] {\n  transition: transform var(--medium) var(--transition-out);\n}\n.v-input .v-icon.active[data-v-469dd17c] {\n  transform: scaleY(-1);\n  transition-timing-function: var(--transition-in);\n}\n.v-input[data-v-469dd17c] input {\n  cursor: pointer;\n}";
 n(css$1,{});
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-3110b322";
-script$1.__file = "shared/components/drawer-item/drawer-item.vue";
+script$1.__scopeId = "data-v-469dd17c";
+script$1.__file = "shared/components/folder/folder.vue";
 
 var script = defineComponent({
-    components: { DrawerItem: script$1, DrawerCollection: script$3, Draggable },
+    components: { DrawerItem: script$3, DrawerCollection: script$5, Draggable, Folder: script$1 },
     props: {
         value: {
             type: Array,
@@ -28417,6 +28737,11 @@ var script = defineComponent({
             const { addTokenToURL, getToken } = useDirectusToken(useApi());
             return addTokenToURL(getRootPath() + `assets/${relatedPrimaryKey.value}`, getToken());
         });
+        const folder = ref();
+        const setFolder = (value) => {
+            console.log('folder => ', value);
+            folder.value = value;
+        };
         return {
             t,
             junction,
@@ -28448,6 +28773,8 @@ var script = defineComponent({
             onUpload,
             showUpload,
             downloadUrl,
+            folder,
+            setFolder
         };
         function emitter(newVal) {
             emit('input', newVal);
@@ -28477,7 +28804,8 @@ const _hoisted_1 = {
   class: "many-to-many"
 };
 const _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/createElementVNode("div", { class: "spacer" }, null, -1 /* HOISTED */));
-const _hoisted_3 = {
+const _hoisted_3 = { class: "label type-label" };
+const _hoisted_4 = {
   key: 3,
   class: "actions"
 };
@@ -28490,6 +28818,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_v_list_item = resolveComponent("v-list-item");
   const _component_draggable = resolveComponent("draggable");
   const _component_v_list = resolveComponent("v-list");
+  const _component_folder = resolveComponent("folder");
   const _component_v_button = resolveComponent("v-button");
   const _component_drawer_item = resolveComponent("drawer-item");
   const _component_drawer_collection = resolveComponent("drawer-collection");
@@ -28574,8 +28903,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 ]),
                 _: 1 /* STABLE */
               })),
+        createElementVNode("div", null, [
+          createElementVNode("div", _hoisted_3, toDisplayString(_ctx.t('folder')), 1 /* TEXT */),
+          createVNode(_component_folder, {
+            value: _ctx.folder,
+            onInput: _ctx.setFolder
+          }, null, 8 /* PROPS */, ["value", "onInput"])
+        ]),
         (!_ctx.disabled)
-          ? (openBlock(), createElementBlock("div", _hoisted_3, [
+          ? (openBlock(), createElementBlock("div", _hoisted_4, [
               (_ctx.enableCreate && _ctx.createAllowed)
                 ? (openBlock(), createBlock(_component_v_button, {
                     key: 0,

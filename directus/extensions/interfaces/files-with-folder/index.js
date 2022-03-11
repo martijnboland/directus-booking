@@ -26629,7 +26629,7 @@ displays.value = [{
         types: ['uuid'],
         localTypes: ['file'],
         options: [],
-        fields: ['id', 'type', 'title'],
+        fields: ['id', 'type', 'title', 'folder'],
     }];
 function getDisplay(name) {
     return !name ? undefined : displays.value.find(({ id }) => id === name);
@@ -28657,6 +28657,28 @@ script$1.render = render$1;
 script$1.__scopeId = "data-v-469dd17c";
 script$1.__file = "shared/components/folder/folder.vue";
 
+function useFolder(items, filesPropertyName, initialFolder) {
+    const folder = ref(initialFolder);
+    const setFolder = (value) => {
+        console.log('folder => ', value);
+        folder.value = value;
+    };
+    const folderFilter = computed(() => {
+        const filter = folder.value ? { folder: folder.value } : undefined;
+        console.log('filter => ', filter);
+        return filter;
+    });
+    watch(items, (newItems) => {
+        if (newItems.length > 0 && newItems[0]) {
+            // Set folder to the folder of the first item in the list
+            setFolder(newItems[0][filesPropertyName].folder);
+        }
+    });
+    return {
+        folder, setFolder, folderFilter
+    };
+}
+
 var script = defineComponent({
     components: { DrawerItem: script$3, DrawerCollection: script$5, Draggable, Folder: script$1 },
     props: {
@@ -28700,7 +28722,7 @@ var script = defineComponent({
     emits: ['input'],
     setup(props, { emit }) {
         const { t } = useI18n();
-        const { value, collection, field } = toRefs(props);
+        const { value, collection, field, folder: initialFolder } = toRefs(props);
         const { junction, junctionCollection, relation, relationCollection, relationInfo } = useRelation(collection, field);
         const templateWithDefaults = computed(() => {
             var _a, _b;
@@ -28737,11 +28759,7 @@ var script = defineComponent({
             const { addTokenToURL, getToken } = useDirectusToken(useApi());
             return addTokenToURL(getRootPath() + `assets/${relatedPrimaryKey.value}`, getToken());
         });
-        const folder = ref();
-        const setFolder = (value) => {
-            console.log('folder => ', value);
-            folder.value = value;
-        };
+        const { folder, setFolder, folderFilter } = useFolder(sortedItems, relationInfo.value.junctionField, initialFolder.value);
         return {
             t,
             junction,
@@ -28774,7 +28792,8 @@ var script = defineComponent({
             showUpload,
             downloadUrl,
             folder,
-            setFolder
+            setFolder,
+            folderFilter
         };
         function emitter(newVal) {
             emit('input', newVal);
@@ -28804,11 +28823,11 @@ const _hoisted_1 = {
   class: "many-to-many"
 };
 const _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/createElementVNode("div", { class: "spacer" }, null, -1 /* HOISTED */));
-const _hoisted_3 = { class: "label type-label" };
-const _hoisted_4 = {
+const _hoisted_3 = {
   key: 3,
   class: "actions"
 };
+const _hoisted_4 = { class: "type-label" };
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_v_notice = resolveComponent("v-notice");
@@ -28903,15 +28922,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 ]),
                 _: 1 /* STABLE */
               })),
-        createElementVNode("div", null, [
-          createElementVNode("div", _hoisted_3, toDisplayString(_ctx.t('folder')), 1 /* TEXT */),
-          createVNode(_component_folder, {
-            value: _ctx.folder,
-            onInput: _ctx.setFolder
-          }, null, 8 /* PROPS */, ["value", "onInput"])
-        ]),
         (!_ctx.disabled)
-          ? (openBlock(), createElementBlock("div", _hoisted_4, [
+          ? (openBlock(), createElementBlock("div", _hoisted_3, [
+              createElementVNode("label", _hoisted_4, toDisplayString(_ctx.t('folder')) + ":", 1 /* TEXT */),
+              createVNode(_component_folder, {
+                value: _ctx.folder,
+                onInput: _ctx.setFolder
+              }, null, 8 /* PROPS */, ["value", "onInput"]),
               (_ctx.enableCreate && _ctx.createAllowed)
                 ? (openBlock(), createBlock(_component_v_button, {
                     key: 0,
@@ -28976,9 +28993,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               "onUpdate:active": _cache[4] || (_cache[4] = $event => ((_ctx.selectModalActive) = $event)),
               collection: _ctx.relationCollection.collection,
               selection: _ctx.selectedPrimaryKeys,
+              filter: _ctx.folderFilter,
               multiple: "",
               onInput: _ctx.stageSelection
-            }, null, 8 /* PROPS */, ["active", "collection", "selection", "onInput"]))
+            }, null, 8 /* PROPS */, ["active", "collection", "selection", "filter", "onInput"]))
           : createCommentVNode("v-if", true),
         (!_ctx.disabled)
           ? (openBlock(), createBlock(_component_v_dialog, {
@@ -29029,7 +29047,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       ]))
 }
 
-var css = ".v-list[data-v-0c1ce2ee] {\n  --v-list-padding: 0 0 4px;\n}\n.actions[data-v-0c1ce2ee] {\n  margin-top: 8px;\n}\n.actions .v-button + .v-button[data-v-0c1ce2ee] {\n  margin-left: 8px;\n}\n.deselect[data-v-0c1ce2ee] {\n  --v-icon-color: var(--foreground-subdued);\n}\n.deselect[data-v-0c1ce2ee]:hover {\n  --v-icon-color: var(--danger);\n}";
+var css = ".v-list[data-v-0c1ce2ee] {\n  --v-list-padding: 0 0 4px;\n}\n.actions[data-v-0c1ce2ee] {\n  margin-top: 8px;\n  display: flex;\n  align-items: center;\n}\n.actions .v-button[data-v-0c1ce2ee] {\n  margin-left: 8px;\n}\n.actions label[data-v-0c1ce2ee] {\n  margin-right: 8px;\n}\n.deselect[data-v-0c1ce2ee] {\n  --v-icon-color: var(--foreground-subdued);\n}\n.deselect[data-v-0c1ce2ee]:hover {\n  --v-icon-color: var(--danger);\n}";
 n(css,{});
 
 script.render = render;

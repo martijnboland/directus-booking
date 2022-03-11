@@ -13,7 +13,7 @@ displays.value = [{
 	types: ['uuid'],
 	localTypes: ['file'],
 	options: [],
-	fields: ['id', 'type', 'title'],
+	fields: ['id', 'type', 'title', 'folder'],
 }];
 
 export function getDisplays(): { displays: Ref<DisplayConfig[]>; displaysRaw: Ref<DisplayConfig[]> } {

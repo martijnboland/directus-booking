@@ -45,12 +45,9 @@
 			</draggable>
 		</v-list>
 
-		<div>
-			<div class="label type-label">{{ t('folder') }}</div>
-			<folder :value="folder" @input="setFolder"></folder>
-		</div>
-
 		<div v-if="!disabled" class="actions">
+			<label class="type-label">{{ t('folder') }}:</label>
+			<folder :value="folder" @input="setFolder"></folder>
 			<v-button v-if="enableCreate && createAllowed" @click="showUpload = true">{{ t('upload_file') }}</v-button>
 			<v-button v-if="enableSelect && selectAllowed" @click="selectModalActive = true">
 				{{ t('add_existing') }}
@@ -88,6 +85,7 @@
 			v-model:active="selectModalActive"
 			:collection="relationCollection.collection"
 			:selection="selectedPrimaryKeys"
+			:filter="folderFilter"
 			multiple
 			@input="stageSelection"
 		/>
@@ -107,7 +105,7 @@
 </template>
 
 <script lang="ts">
-import { getFieldsFromTemplate, useApi, useStores } from '@directus/extensions-sdk';
+import { getFieldsFromTemplate, useApi } from '@directus/extensions-sdk';
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed, PropType, toRefs, ref } from 'vue';
 import Draggable from 'vuedraggable';
@@ -125,6 +123,7 @@ import DrawerCollection from '../../shared/components/drawer-collection';
 import DrawerItem from '../../shared/components/drawer-item';
 import { get } from 'lodash';
 import Folder from '../../shared/components/folder';
+import useFolder from './use-folder';
 
 export default defineComponent({
 	components: { DrawerItem, DrawerCollection, Draggable, Folder },
@@ -171,7 +170,7 @@ export default defineComponent({
 		
 		const { t } = useI18n();
 
-		const { value, collection, field } = toRefs(props);
+		const { value, collection, field, folder: initialFolder } = toRefs(props);
 
 		const { junction, junctionCollection, relation, relationCollection, relationInfo } = useRelation(collection, field);
 
@@ -239,11 +238,7 @@ export default defineComponent({
 			return addTokenToURL(getRootPath() + `assets/${relatedPrimaryKey.value}`, getToken());
 		});
 
-		const folder = ref();
-		const setFolder = (value) => {
-			console.log('folder => ', value);
-			folder.value = value;
-		}
+		const { folder, setFolder, folderFilter } = useFolder(sortedItems, relationInfo.value.junctionField, initialFolder.value);
 
 		return {
 			t,
@@ -277,7 +272,8 @@ export default defineComponent({
 			showUpload,
 			downloadUrl,
 			folder,
-			setFolder
+			setFolder,
+			folderFilter
 		};
 
 		function emitter(newVal: any[] | null) {
@@ -313,9 +309,14 @@ export default defineComponent({
 
 .actions {
 	margin-top: 8px;
+	display: flex;
+	align-items: center;
 
-	.v-button + .v-button {
+	.v-button {
 		margin-left: 8px;
+	}
+	label {
+		margin-right: 8px;
 	}
 }
 

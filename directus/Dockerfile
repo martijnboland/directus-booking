@@ -12,7 +12,7 @@ RUN mkdir -p seeddata
 
 VOLUME /directus/seeddata
 
-COPY ./seeddata/*.json /directus/seeddata
+COPY ./seeddata/ /directus/seeddata
 
 COPY ./extensions/ /directus/extensions
 

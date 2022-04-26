@@ -1,0 +1,156 @@
+[
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "appointments",
+      "action": "create",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "appointments",
+      "action": "read",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "appointments",
+      "action": "update",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "appointments",
+      "action": "delete",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "appointments",
+      "action": "share",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "customers",
+      "action": "read",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "employees",
+      "action": "read",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "employees_services",
+      "action": "read",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "employeeworkinghours",
+      "action": "read",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "services",
+      "action": "read",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "customers",
+      "action": "create",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "customers",
+      "action": "update",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "customers",
+      "action": "delete",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  },
+  {
+      "role": "6B2CAEA0-E1A1-4E63-BF7B-33C54308B0DA",
+      "collection": "customers",
+      "action": "share",
+      "permissions": {},
+      "validation": {},
+      "presets": null,
+      "fields": [
+          "*"
+      ]
+  }
+]

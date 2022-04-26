@@ -1,0 +1,20 @@
+[
+  {
+      "name": "Wellness Massage 60 min",
+      "duration": 60,
+      "price": 55,
+      "description": null
+  },
+  {
+      "name": "Wellness massage 30 min",
+      "duration": 30,
+      "price": 30.5,
+      "description": null
+  },
+  {
+      "name": "Full nail polish experience",
+      "duration": 45,
+      "price": 67.5,
+      "description": null
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "account": "5BFACA56-4FCE-4850-9F61-9662902EA863",
+    "services": [],
+    "workinghours": [
+      {
+        "weekday": 1,
+        "starttime": "08:00:00",
+        "endtime": "17:00:00"
+      },
+      {
+        "weekday": 2,
+        "starttime": "08:00:00",
+        "endtime": "17:00:00"
+      },
+      {
+        "weekday": 3,
+        "starttime": "08:00:00",
+        "endtime": "17:00:00"
+      },
+      {
+        "weekday": 4,
+        "starttime": "08:00:00",
+        "endtime": "17:00:00"
+      },
+      {
+        "weekday": 5,
+        "starttime": "08:00:00",
+        "endtime": "17:00:00"
+      }
+    ]
+  },
+  {
+    "account": "4A89823A-9031-403C-8FE3-FE45BCABC055",
+    "services": [],
+    "workinghours": [
+      {
+        "weekday": 1,
+        "starttime": "08:00:00",
+        "endtime": "17:00:00"
+      },
+      {
+        "weekday": 2,
+        "starttime": "08:00:00",
+        "endtime": "12:00:00"
+      },
+      {
+        "weekday": 3,
+        "starttime": "13:00:00",
+        "endtime": "17:00:00"
+      },
+      {
+        "weekday": 4,
+        "starttime": "13:00:00",
+        "endtime": "17:00:00"
+      },
+      {
+        "weekday": 5,
+        "starttime": "13:00:00",
+        "endtime": "17:00:00"
+      }
+    ]
+  }
+]

@@ -8,6 +8,12 @@ VOLUME /directus/snapshots
 
 COPY ./snapshots/booking-start.yaml /directus/snapshots
 
+RUN mkdir -p seeddata
+
+VOLUME /directus/seeddata
+
+COPY ./seeddata/ /directus/seeddata
+
 COPY ./extensions/ /directus/extensions
 
 EXPOSE 8055

@@ -1,0 +1,1 @@
+<h2>Create booking</h2>

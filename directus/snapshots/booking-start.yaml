@@ -1198,7 +1198,7 @@ fields:
       max_length: 4
       numeric_precision: 10
       numeric_scale: null
-      is_nullable: true
+      is_nullable: false
       default_value: null
       is_primary_key: false
       is_unique: false
@@ -1228,16 +1228,16 @@ fields:
       required: true
       group: null
   - collection: appointments
-    field: StartDateTime
+    field: startdatetime
     type: dateTime
     schema:
       table: appointments
-      name: StartDateTime
+      name: startdatetime
       data_type: datetime2
       max_length: 8
       numeric_precision: 27
       numeric_scale: 7
-      is_nullable: true
+      is_nullable: false
       default_value: null
       is_primary_key: false
       is_unique: false
@@ -1248,7 +1248,7 @@ fields:
       generation_expression: null
     meta:
       collection: appointments
-      field: StartDateTime
+      field: startdatetime
       special: null
       interface: datetime
       options: null
@@ -1264,16 +1264,16 @@ fields:
       required: true
       group: null
   - collection: appointments
-    field: EndDateTime
+    field: endatetime
     type: dateTime
     schema:
       table: appointments
-      name: EndDateTime
+      name: endatetime
       data_type: datetime2
       max_length: 8
       numeric_precision: 27
       numeric_scale: 7
-      is_nullable: true
+      is_nullable: false
       default_value: null
       is_primary_key: false
       is_unique: false
@@ -1284,7 +1284,7 @@ fields:
       generation_expression: null
     meta:
       collection: appointments
-      field: EndDateTime
+      field: endatetime
       special: null
       interface: datetime
       options: null
@@ -1348,7 +1348,7 @@ fields:
       max_length: 4
       numeric_precision: 10
       numeric_scale: null
-      is_nullable: true
+      is_nullable: false
       default_value: null
       is_primary_key: false
       is_unique: false

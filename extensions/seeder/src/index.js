@@ -33,7 +33,7 @@ export default ({ filter, action }, { services, database, getSchema }) => {
 			await rolesService.upsertMany(roles);
 			console.log('Finished creating roles');
 		} else {
-			console.log('More than one role already exists, skipping seed => ', existingRoles);
+			console.log('More than one role already exists, skipping seed...');
 		}
 	}
 
@@ -50,24 +50,7 @@ export default ({ filter, action }, { services, database, getSchema }) => {
 			await permisssionsService.upsertMany(permissions);
 			console.log('Finished creating permissions');
 		} else {
-			console.log('Permissions already exists, skipping creation => ', existingPermissions);
-		}
-	}
-
-	async function seedPermissions(schema) {
-		console.log('Seeding permissions...');
-		
-		const permissions = await readJsonFile(path.join(__dirname, '../../../seeddata/permissions.json'));
-
-		var permissionsService = new PermissionsService({ knex: database, schema: schema });
-		var existingPermissions = await permissionsService.readByQuery({ fields: 'id' });
-		
-		if (existingPermissions.length === 0) { 
-			console.log('No custom permissions exist in the database, creating...');
-			await permissionsService.upsertMany(permissions);
-			console.log('Finished creating permissions');
-		} else {
-			console.log('Permissions already exists, skipping creation => ', existingPermissions);
+			console.log('Permissions already exists, skipping creation...');
 		}
 	}
 
@@ -85,7 +68,7 @@ export default ({ filter, action }, { services, database, getSchema }) => {
 			await usersService.upsertMany(users);
 			console.log('Finished creating users');
 		} else {
-			console.log('More than one user already exists, skipping seed => ', existingUsers);
+			console.log('More than one user already exists, skipping seed...');
 		}
 	}
 
@@ -104,7 +87,7 @@ export default ({ filter, action }, { services, database, getSchema }) => {
 			console.log('Finished creating services');
 			return serviceIds;
 		} else {
-			console.log('Services already exist, skipping seed => ', existingServices);
+			console.log('Services already exist, skipping seed...');
 			return [];
 		}
 	}
@@ -130,7 +113,7 @@ export default ({ filter, action }, { services, database, getSchema }) => {
 			await employeesService.upsertMany(employees);
 			console.log('Finished creating employees');
 		} else {
-			console.log('Employees already exist, skipping seed => ', exisitingEmployees);
+			console.log('Employees already exist, skipping seed...');
 		}
 	}
 

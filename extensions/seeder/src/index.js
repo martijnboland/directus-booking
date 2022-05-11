@@ -47,23 +47,6 @@ export default ({ filter, action }, { services, database, getSchema }) => {
 		
 		if (existingPermissions.length === 0) { 
 			console.log('No custom permissions exist in the database, creating...');
-			await permisssionsService.upsertMany(permissions);
-			console.log('Finished creating permissions');
-		} else {
-			console.log('Permissions already exists, skipping creation => ', existingPermissions);
-		}
-	}
-
-	async function seedPermissions(schema) {
-		console.log('Seeding permissions...');
-		
-		const permissions = await readJsonFile(path.join(__dirname, '../../../seeddata/permissions.json'));
-
-		var permissionsService = new PermissionsService({ knex: database, schema: schema });
-		var existingPermissions = await permissionsService.readByQuery({ fields: 'id' });
-		
-		if (existingPermissions.length === 0) { 
-			console.log('No custom permissions exist in the database, creating...');
 			await permissionsService.upsertMany(permissions);
 			console.log('Finished creating permissions');
 		} else {

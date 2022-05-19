@@ -36,7 +36,7 @@ services:
     ports:
       - 14333:1433
     volumes:
-      - ./mssql/database:/var/opt/mssql
+      - ./mssql/database/data:/var/opt/mssql/data
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Test@123

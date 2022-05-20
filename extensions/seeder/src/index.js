@@ -47,7 +47,7 @@ export default ({ filter, action }, { services, database, getSchema }) => {
 		
 		if (existingPermissions.length === 0) { 
 			console.log('No custom permissions exist in the database, creating...');
-			await permisssionsService.upsertMany(permissions);
+			await permissionsService.upsertMany(permissions);
 			console.log('Finished creating permissions');
 		} else {
 			console.log('Permissions already exists, skipping creation...');

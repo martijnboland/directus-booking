@@ -1,4 +1,4 @@
-FROM directus/directus:9.9.1
+FROM directus/directus:9.11.0
 
 WORKDIR /directus
 

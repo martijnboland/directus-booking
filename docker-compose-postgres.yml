@@ -20,11 +20,11 @@ services:
       TELEMETRY: 'false'
       LOG_LEVEL: 'debug'
 
-      DB_CLIENT: 'mssql'
+      DB_CLIENT: 'pg'
       DB_DATABASE: 'directus-booking'
       DB_HOST: 'database'
-      DB_PORT: '1433'
-      DB_USER: 'sa'
+      DB_PORT: '5432'
+      DB_USER: 'postgres'
       DB_PASSWORD: 'Test@123'
 
       ADMIN_EMAIL: 'admin@example.com'
@@ -32,15 +32,13 @@ services:
 
       EXTENSIONS_AUTO_RELOAD: 'true'
   database:
-    build: ./mssql
+    image: postgis/postgis:13-3.1-alpine
     ports:
-      - 14333:1433
-    volumes:
-      - ./mssql/database/data:/var/opt/mssql/data
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Test@123
+      - 5100:5432
     networks:
       - directus
+    environment:
+      POSTGRES_PASSWORD: 'Test@123'
+      POSTGRES_DB: 'directus-booking'
 networks:
   directus:

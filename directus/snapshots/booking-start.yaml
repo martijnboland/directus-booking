@@ -1,2150 +1,2240 @@
 version: 1
-directus: 9.5.0
+directus: 9.11.0
 collections:
   - collection: appointments
     meta:
-      collection: appointments
-      icon: null
-      note: null
-      display_template: null
-      hidden: false
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: appointments
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
+      catalog: directus-booking
       name: appointments
       schema: dbo
-      catalog: directus-booking
   - collection: customers
     meta:
-      collection: customers
-      icon: null
-      note: null
-      display_template: null
-      hidden: false
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: customers
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
+      catalog: directus-booking
       name: customers
       schema: dbo
-      catalog: directus-booking
   - collection: employees
     meta:
-      collection: employees
-      icon: null
-      note: null
-      display_template: null
-      hidden: false
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: employees
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
+      catalog: directus-booking
       name: employees
       schema: dbo
-      catalog: directus-booking
   - collection: employees_services
     meta:
-      collection: employees_services
-      icon: import_export
-      note: null
-      display_template: null
-      hidden: true
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: employees_services
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
+      catalog: directus-booking
       name: employees_services
       schema: dbo
-      catalog: directus-booking
   - collection: employeeworkinghours
     meta:
-      collection: employeeworkinghours
-      icon: null
-      note: null
-      display_template: null
-      hidden: true
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: employeeworkinghours
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: null
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
+      catalog: directus-booking
       name: employeeworkinghours
       schema: dbo
-      catalog: directus-booking
   - collection: services
     meta:
-      collection: services
-      icon: null
-      note: null
-      display_template: null
-      hidden: false
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: services
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
+      catalog: directus-booking
       name: services
       schema: dbo
-      catalog: directus-booking
 fields:
-  - collection: services
-    field: id
-    type: integer
-    schema:
-      table: services
-      name: id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: true
-      is_unique: true
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
+  - collection: appointments
+    field: EndDateTime
     meta:
-      collection: services
-      field: id
-      special: null
-      interface: input
-      options: null
+      collection: appointments
+      conditions: null
       display: null
       display_options: null
-      readonly: true
-      hidden: true
-      sort: 1
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: EndDateTime
       group: null
-  - collection: services
-    field: user_created
-    type: uuid
-    schema:
-      table: services
-      name: user_created
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 2
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: services
-    field: date_created
-    type: timestamp
-    schema:
-      table: services
-      name: date_created
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 3
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: services
-    field: user_updated
-    type: uuid
-    schema:
-      table: services
-      name: user_updated
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 4
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: services
-    field: date_updated
-    type: timestamp
-    schema:
-      table: services
-      name: date_updated
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 5
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: services
-    field: name
-    type: string
-    schema:
-      table: services
-      name: name
-      data_type: nvarchar
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: name
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: false
       hidden: false
-      sort: 6
-      width: full
-      translations: null
+      interface: datetime
       note: null
-      conditions: null
+      options: null
+      readonly: false
       required: true
-      group: null
-  - collection: services
-    field: duration
-    type: integer
-    schema:
-      table: services
-      name: duration
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: duration
-      special: null
-      interface: input
-      options:
-        min: null
-        max: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
       sort: 8
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: services
-    field: price
-    type: decimal
-    schema:
-      table: services
-      name: price
-      data_type: decimal
-      max_length: 9
-      numeric_precision: 10
-      numeric_scale: 5
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: price
       special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 9
+      translations: null
+      validation: null
+      validation_message: null
       width: half
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: services
-    field: description
-    type: string
     schema:
-      table: services
-      name: description
-      data_type: nvarchar
-      max_length: 1000
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: services
-      field: description
-      special: null
-      interface: null
-      options:
-        softLength: 1000
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees
-    field: id
-    type: integer
-    schema:
-      table: employees
-      name: id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: true
-      is_unique: true
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees
-      field: id
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees
-    field: user_created
-    type: uuid
-    schema:
-      table: employees
-      name: user_created
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees
-    field: date_created
-    type: timestamp
-    schema:
-      table: employees
-      name: date_created
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees
-    field: user_updated
-    type: uuid
-    schema:
-      table: employees
-      name: user_updated
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees
-    field: date_updated
-    type: timestamp
-    schema:
-      table: employees
-      name: date_updated
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees
-    field: account
-    type: uuid
-    schema:
-      table: employees
-      name: account
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees
-      field: account
-      special:
-        - m2o
-      interface: select-dropdown-m2o
-      options:
-        template: "{{first_name}}\_{{last_name}}"
-      display: related-values
-      display_options:
-        template: "{{first_name}}\_{{last_name}}"
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees_services
-    field: id
-    type: integer
-    schema:
-      table: employees_services
-      name: id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: true
-      is_unique: true
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees_services
-      field: id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees_services
-    field: employees_id
-    type: integer
-    schema:
-      table: employees_services
-      name: employees_id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: employees
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees_services
-      field: employees_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employees_services
-    field: services_id
-    type: integer
-    schema:
-      table: employees_services
-      name: services_id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: services
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employees_services
-      field: services_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employeeworkinghours
-    field: id
-    type: integer
-    schema:
-      table: employeeworkinghours
-      name: id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: true
-      is_unique: true
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employeeworkinghours
-      field: id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employeeworkinghours
-    field: employee
-    type: integer
-    schema:
-      table: employeeworkinghours
-      name: employee
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: employees
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employeeworkinghours
-      field: employee
-      special: null
-      interface: select-dropdown-m2o
-      options:
-        template: "{{account.first_name}}\_{{account.last_name}}"
-      display: related-values
-      display_options:
-        template: "{{account.first_name}}\_{{account.last_name}}"
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employeeworkinghours
-    field: weekday
-    type: integer
-    schema:
-      table: employeeworkinghours
-      name: weekday
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employeeworkinghours
-      field: weekday
-      special: null
-      interface: input
-      options:
-        min: 1
-        max: 6
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: employeeworkinghours
-    field: starttime
-    type: time
-    schema:
-      table: employeeworkinghours
-      name: starttime
-      data_type: time
-      max_length: 5
-      numeric_precision: 16
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employeeworkinghours
-      field: starttime
-      special: null
-      interface: datetime
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: employeeworkinghours
-    field: endtime
-    type: time
-    schema:
-      table: employeeworkinghours
-      name: endtime
-      data_type: time
-      max_length: 5
-      numeric_precision: 16
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: employeeworkinghours
-      field: endtime
-      special: null
-      interface: datetime
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: appointments
-    field: id
-    type: integer
-    schema:
-      table: appointments
-      name: id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: true
-      is_unique: true
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: id
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 1
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: appointments
-    field: user_created
-    type: uuid
-    schema:
-      table: appointments
-      name: user_created
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 2
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: appointments
-    field: date_created
-    type: timestamp
-    schema:
-      table: appointments
-      name: date_created
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 3
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: appointments
-    field: user_updated
-    type: uuid
-    schema:
-      table: appointments
-      name: user_updated
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 4
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: appointments
-    field: date_updated
-    type: timestamp
-    schema:
-      table: appointments
-      name: date_updated
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 5
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: appointments
-    field: service
-    type: integer
-    schema:
-      table: appointments
-      name: service
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: services
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: service
-      special:
-        - m2o
-      interface: select-dropdown-m2o
-      options:
-        template: '{{name}}'
-      display: related-values
-      display_options:
-        template: '{{name}}'
-      readonly: false
-      hidden: false
-      sort: 6
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: appointments
-    field: startdatetime
-    type: dateTime
-    schema:
-      table: appointments
-      name: startdatetime
       data_type: datetime2
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
       max_length: 8
+      name: EndDateTime
       numeric_precision: 27
       numeric_scale: 7
-      is_nullable: false
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
+      table: appointments
+    type: dateTime
+  - collection: appointments
+    field: StartDateTime
     meta:
       collection: appointments
-      field: startdatetime
-      special: null
-      interface: datetime
-      options: null
+      conditions: null
       display: null
       display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: true
+      field: StartDateTime
       group: null
-  - collection: appointments
-    field: endatetime
-    type: dateTime
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
     schema:
-      table: appointments
-      name: endatetime
       data_type: datetime2
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
       max_length: 8
+      name: StartDateTime
       numeric_precision: 27
       numeric_scale: 7
-      is_nullable: false
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: endatetime
-      special: null
-      interface: datetime
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 8
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: appointments
-    field: employee
-    type: integer
-    schema:
       table: appointments
-      name: employee
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: employees
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: appointments
-      field: employee
-      special:
-        - m2o
-      interface: select-dropdown-m2o
-      options:
-        template: "{{account.first_name}}\_{{account.last_name}}"
-      display: related-values
-      display_options:
-        template: "{{account.first_name}}\_{{account.last_name}}"
-      readonly: false
-      hidden: false
-      sort: 10
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
+    type: dateTime
   - collection: appointments
     field: customer
-    type: integer
-    schema:
-      table: appointments
-      name: customer
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: customers
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
     meta:
       collection: appointments
+      conditions: null
+      display: null
+      display_options: null
       field: customer
-      special:
-        - m2o
+      group: null
+      hidden: false
       interface: select-dropdown-m2o
+      note: null
       options:
         template: '{{email}}'
-      display: null
-      display_options: null
       readonly: false
-      hidden: false
+      required: true
       sort: 9
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: customers
-    field: id
-    type: integer
-    schema:
-      table: customers
-      name: id
-      data_type: int
-      max_length: 4
-      numeric_precision: 10
-      numeric_scale: null
-      is_nullable: false
-      default_value: null
-      is_primary_key: true
-      is_unique: true
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: id
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 1
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: customers
-    field: user_created
-    type: uuid
-    schema:
-      table: customers
-      name: user_created
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 2
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: customers
-    field: date_created
-    type: timestamp
-    schema:
-      table: customers
-      name: date_created
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 3
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: customers
-    field: user_updated
-    type: uuid
-    schema:
-      table: customers
-      name: user_updated
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 4
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: customers
-    field: date_updated
-    type: timestamp
-    schema:
-      table: customers
-      name: date_updated
-      data_type: datetimeoffset
-      max_length: 10
-      numeric_precision: 34
-      numeric_scale: 7
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 5
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: customers
-    field: email
-    type: string
-    schema:
-      table: customers
-      name: email
-      data_type: nvarchar
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: email
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 6
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-  - collection: customers
-    field: phone
-    type: string
-    schema:
-      table: customers
-      name: phone
-      data_type: nvarchar
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: phone
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: customers
-    field: account
-    type: uuid
-    schema:
-      table: customers
-      name: account
-      data_type: uniqueidentifier
-      max_length: 16
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      is_generated: false
-      generation_expression: null
-    meta:
-      collection: customers
-      field: account
       special:
         - m2o
-      interface: select-dropdown-m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: customers
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: customer
+      numeric_precision: 10
+      numeric_scale: null
+      table: appointments
+    type: integer
+  - collection: appointments
+    field: date_created
+    meta:
+      collection: appointments
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
       options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_created
+      numeric_precision: 34
+      numeric_scale: 7
+      table: appointments
+    type: timestamp
+  - collection: appointments
+    field: date_updated
+    meta:
+      collection: appointments
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_updated
+      numeric_precision: 34
+      numeric_scale: 7
+      table: appointments
+    type: timestamp
+  - collection: appointments
+    field: employee
+    meta:
+      collection: appointments
+      conditions: null
+      display: related-values
+      display_options:
+        template: "{{account.first_name}}\_{{account.last_name}}"
+      field: employee
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: "{{account.first_name}}\_{{account.last_name}}"
+      readonly: false
+      required: false
+      sort: 10
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: employees
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: employee
+      numeric_precision: 10
+      numeric_scale: null
+      table: appointments
+    type: integer
+  - collection: appointments
+    field: id
+    meta:
+      collection: appointments
+      conditions: null
       display: null
       display_options: null
-      readonly: false
-      hidden: false
-      sort: 10
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: id
       group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: 4
+      name: id
+      numeric_precision: 10
+      numeric_scale: null
+      table: appointments
+    type: integer
+  - collection: appointments
+    field: service
+    meta:
+      collection: appointments
+      conditions: null
+      display: related-values
+      display_options:
+        template: '{{name}}'
+      field: service
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: true
+      sort: 6
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: services
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: service
+      numeric_precision: 10
+      numeric_scale: null
+      table: appointments
+    type: integer
+  - collection: appointments
+    field: user_created
+    meta:
+      collection: appointments
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_created
+      numeric_precision: null
+      numeric_scale: null
+      table: appointments
+    type: uuid
+  - collection: appointments
+    field: user_updated
+    meta:
+      collection: appointments
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      table: appointments
+    type: uuid
+  - collection: customers
+    field: account
+    meta:
+      collection: customers
+      conditions: null
+      display: null
+      display_options: null
+      field: account
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: account
+      numeric_precision: null
+      numeric_scale: null
+      table: customers
+    type: uuid
+  - collection: customers
+    field: date_created
+    meta:
+      collection: customers
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_created
+      numeric_precision: 34
+      numeric_scale: 7
+      table: customers
+    type: timestamp
+  - collection: customers
+    field: date_updated
+    meta:
+      collection: customers
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_updated
+      numeric_precision: 34
+      numeric_scale: 7
+      table: customers
+    type: timestamp
+  - collection: customers
+    field: email
+    meta:
+      collection: customers
+      conditions: null
+      display: null
+      display_options: null
+      field: email
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 6
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: nvarchar
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: email
+      numeric_precision: null
+      numeric_scale: null
+      table: customers
+    type: string
   - collection: customers
     field: firstname
-    type: string
-    schema:
-      table: customers
-      name: firstname
-      data_type: nvarchar
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
     meta:
       collection: customers
-      field: firstname
-      special: null
-      interface: input
-      options: null
+      conditions: null
       display: null
       display_options: null
-      readonly: false
-      hidden: false
-      sort: 8
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: firstname
       group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: nvarchar
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: firstname
+      numeric_precision: null
+      numeric_scale: null
+      table: customers
+    type: string
+  - collection: customers
+    field: id
+    meta:
+      collection: customers
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: 4
+      name: id
+      numeric_precision: 10
+      numeric_scale: null
+      table: customers
+    type: integer
   - collection: customers
     field: lastname
-    type: string
-    schema:
-      table: customers
-      name: lastname
-      data_type: nvarchar
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      default_value: null
-      is_primary_key: false
-      is_unique: false
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-      is_generated: false
-      generation_expression: null
     meta:
       collection: customers
-      field: lastname
-      special: null
-      interface: input
-      options: null
+      conditions: null
       display: null
       display_options: null
-      readonly: false
-      hidden: false
-      sort: 9
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: lastname
       group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: nvarchar
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: lastname
+      numeric_precision: null
+      numeric_scale: null
+      table: customers
+    type: string
+  - collection: customers
+    field: phone
+    meta:
+      collection: customers
+      conditions: null
+      display: null
+      display_options: null
+      field: phone
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: nvarchar
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: phone
+      numeric_precision: null
+      numeric_scale: null
+      table: customers
+    type: string
+  - collection: customers
+    field: user_created
+    meta:
+      collection: customers
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_created
+      numeric_precision: null
+      numeric_scale: null
+      table: customers
+    type: uuid
+  - collection: customers
+    field: user_updated
+    meta:
+      collection: customers
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      table: customers
+    type: uuid
   - collection: employees
-    field: services
-    type: alias
-    schema: null
+    field: account
     meta:
       collection: employees
-      field: services
+      conditions: null
+      display: related-values
+      display_options:
+        template: "{{first_name}}\_{{last_name}}"
+      field: account
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: "{{first_name}}\_{{last_name}}"
+      readonly: false
+      required: false
+      sort: null
       special:
-        - m2m
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: account
+      numeric_precision: null
+      numeric_scale: null
+      table: employees
+    type: uuid
+  - collection: employees
+    field: date_created
+    meta:
+      collection: employees
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_created
+      numeric_precision: 34
+      numeric_scale: 7
+      table: employees
+    type: timestamp
+  - collection: employees
+    field: date_updated
+    meta:
+      collection: employees
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_updated
+      numeric_precision: 34
+      numeric_scale: 7
+      table: employees
+    type: timestamp
+  - collection: employees
+    field: id
+    meta:
+      collection: employees
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: 4
+      name: id
+      numeric_precision: 10
+      numeric_scale: null
+      table: employees
+    type: integer
+  - collection: employees
+    field: services
+    meta:
+      collection: employees
+      conditions: null
+      display: related-values
+      display_options:
+        template: '{{services_id.name}}'
+      field: services
+      group: null
+      hidden: false
       interface: list-m2m
+      note: null
       options:
         enableCreate: false
         template: '{{services_id.name}}'
-      display: related-values
-      display_options:
-        template: '{{services_id.name}}'
       readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
       required: false
-      group: null
-  - collection: employees
-    field: workinghours
-    type: alias
+      sort: null
+      special:
+        - m2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
     schema: null
+    type: alias
+  - collection: employees
+    field: user_created
     meta:
       collection: employees
-      field: workinghours
-      special:
-        - o2m
-      interface: list-o2m
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
       options:
-        template: "{{weekday}}\_{{starttime}}\_{{endtime}}"
-        enableSelect: false
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_created
+      numeric_precision: null
+      numeric_scale: null
+      table: employees
+    type: uuid
+  - collection: employees
+    field: user_updated
+    meta:
+      collection: employees
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      table: employees
+    type: uuid
+  - collection: employees
+    field: workinghours
+    meta:
+      collection: employees
+      conditions: null
       display: related-values
       display_options:
         template: "{{weekday}}\_{{starttime}}\_{{endtime}}"
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: workinghours
       group: null
-relations:
-  - collection: services
-    field: user_created
-    related_collection: directus_users
-    schema:
-      table: services
-      column: user_created
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: services_user_created_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: services
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: services
-    field: user_updated
-    related_collection: directus_users
-    schema:
-      table: services
-      column: user_updated
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: services_user_updated_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: services
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: employees
-    field: user_created
-    related_collection: directus_users
-    schema:
-      table: employees
-      column: user_created
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: employees_user_created_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: employees
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: employees
-    field: user_updated
-    related_collection: directus_users
-    schema:
-      table: employees
-      column: user_updated
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: employees_user_updated_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: employees
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: employees
-    field: account
-    related_collection: directus_users
-    schema:
-      table: employees
-      column: account
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: employees_account_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: employees
-      many_field: account
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
+      hidden: false
+      interface: list-o2m
+      note: null
+      options:
+        enableSelect: false
+        template: "{{weekday}}\_{{starttime}}\_{{endtime}}"
+      readonly: false
+      required: false
+      sort: null
+      special:
+        - o2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema: null
+    type: alias
   - collection: employees_services
     field: employees_id
-    related_collection: employees
-    schema:
-      table: employees_services
-      column: employees_id
-      foreign_key_schema: dbo
-      foreign_key_table: employees
-      foreign_key_column: id
-      constraint_name: employees_services_employees_id_foreign
-      on_update: NO ACTION
-      on_delete: CASCADE
     meta:
-      many_collection: employees_services
-      many_field: employees_id
-      one_collection: employees
-      one_field: services
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: services_id
-      sort_field: null
-      one_deselect_action: delete
+      collection: employees_services
+      conditions: null
+      display: null
+      display_options: null
+      field: employees_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: employees
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: employees_id
+      numeric_precision: 10
+      numeric_scale: null
+      table: employees_services
+    type: integer
+  - collection: employees_services
+    field: id
+    meta:
+      collection: employees_services
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: 4
+      name: id
+      numeric_precision: 10
+      numeric_scale: null
+      table: employees_services
+    type: integer
   - collection: employees_services
     field: services_id
-    related_collection: services
-    schema:
-      table: employees_services
-      column: services_id
-      foreign_key_schema: dbo
-      foreign_key_table: services
-      foreign_key_column: id
-      constraint_name: employees_services_services_id_foreign
-      on_update: NO ACTION
-      on_delete: CASCADE
     meta:
-      many_collection: employees_services
-      many_field: services_id
-      one_collection: services
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: employees_id
-      sort_field: null
-      one_deselect_action: nullify
+      collection: employees_services
+      conditions: null
+      display: null
+      display_options: null
+      field: services_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: services
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: services_id
+      numeric_precision: 10
+      numeric_scale: null
+      table: employees_services
+    type: integer
   - collection: employeeworkinghours
     field: employee
-    related_collection: employees
+    meta:
+      collection: employeeworkinghours
+      conditions: null
+      display: related-values
+      display_options:
+        template: "{{account.first_name}}\_{{account.last_name}}"
+      field: employee
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: "{{account.first_name}}\_{{account.last_name}}"
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
     schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: employees
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: employee
+      numeric_precision: 10
+      numeric_scale: null
       table: employeeworkinghours
-      column: employee
-      foreign_key_schema: dbo
-      foreign_key_table: employees
-      foreign_key_column: id
-      constraint_name: employeeworkinghours_employee_foreign
-      on_update: NO ACTION
-      on_delete: CASCADE
+    type: integer
+  - collection: employeeworkinghours
+    field: endtime
     meta:
-      many_collection: employeeworkinghours
-      many_field: employee
-      one_collection: employees
-      one_field: workinghours
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: delete
-  - collection: appointments
+      collection: employeeworkinghours
+      conditions: null
+      display: null
+      display_options: null
+      field: endtime
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: time
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 5
+      name: endtime
+      numeric_precision: 16
+      numeric_scale: 7
+      table: employeeworkinghours
+    type: time
+  - collection: employeeworkinghours
+    field: id
+    meta:
+      collection: employeeworkinghours
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: 4
+      name: id
+      numeric_precision: 10
+      numeric_scale: null
+      table: employeeworkinghours
+    type: integer
+  - collection: employeeworkinghours
+    field: starttime
+    meta:
+      collection: employeeworkinghours
+      conditions: null
+      display: null
+      display_options: null
+      field: starttime
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: time
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 5
+      name: starttime
+      numeric_precision: 16
+      numeric_scale: 7
+      table: employeeworkinghours
+    type: time
+  - collection: employeeworkinghours
+    field: weekday
+    meta:
+      collection: employeeworkinghours
+      conditions: null
+      display: null
+      display_options: null
+      field: weekday
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        max: 6
+        min: 1
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: weekday
+      numeric_precision: 10
+      numeric_scale: null
+      table: employeeworkinghours
+    type: integer
+  - collection: services
+    field: date_created
+    meta:
+      collection: services
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_created
+      numeric_precision: 34
+      numeric_scale: 7
+      table: services
+    type: timestamp
+  - collection: services
+    field: date_updated
+    meta:
+      collection: services
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: datetimeoffset
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 10
+      name: date_updated
+      numeric_precision: 34
+      numeric_scale: 7
+      table: services
+    type: timestamp
+  - collection: services
+    field: description
+    meta:
+      collection: services
+      conditions: null
+      display: null
+      display_options: null
+      field: description
+      group: null
+      hidden: false
+      interface: null
+      note: null
+      options:
+        softLength: 1000
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: nvarchar
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 1000
+      name: description
+      numeric_precision: null
+      numeric_scale: null
+      table: services
+    type: string
+  - collection: services
+    field: duration
+    meta:
+      collection: services
+      conditions: null
+      display: null
+      display_options: null
+      field: duration
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        max: null
+        min: null
+      readonly: false
+      required: true
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 4
+      name: duration
+      numeric_precision: 10
+      numeric_scale: null
+      table: services
+    type: integer
+  - collection: services
+    field: id
+    meta:
+      collection: services
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: int
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: 4
+      name: id
+      numeric_precision: 10
+      numeric_scale: null
+      table: services
+    type: integer
+  - collection: services
+    field: name
+    meta:
+      collection: services
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 6
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      data_type: nvarchar
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: name
+      numeric_precision: null
+      numeric_scale: null
+      table: services
+    type: string
+  - collection: services
+    field: price
+    meta:
+      collection: services
+      conditions: null
+      display: null
+      display_options: null
+      field: price
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: decimal
+      default_value: null
+      foreign_key_column: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 9
+      name: price
+      numeric_precision: 10
+      numeric_scale: 5
+      table: services
+    type: decimal
+  - collection: services
     field: user_created
-    related_collection: directus_users
-    schema:
-      table: appointments
-      column: user_created
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: appointments_user_created_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
     meta:
-      many_collection: appointments
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: appointments
+      collection: services
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_created
+      numeric_precision: null
+      numeric_scale: null
+      table: services
+    type: uuid
+  - collection: services
     field: user_updated
-    related_collection: directus_users
+    meta:
+      collection: services
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
     schema:
-      table: appointments
-      column: user_updated
-      foreign_key_schema: dbo
+      data_type: uniqueidentifier
+      default_value: null
+      foreign_key_column: id
       foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: appointments_user_updated_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: appointments
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: appointments
-    field: service
-    related_collection: services
-    schema:
-      table: appointments
-      column: service
-      foreign_key_schema: dbo
-      foreign_key_table: services
-      foreign_key_column: id
-      constraint_name: appointments_service_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: appointments
-      many_field: service
-      one_collection: services
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: appointments
-    field: employee
-    related_collection: employees
-    schema:
-      table: appointments
-      column: employee
-      foreign_key_schema: dbo
-      foreign_key_table: employees
-      foreign_key_column: id
-      constraint_name: appointments_employee_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: appointments
-      many_field: employee
-      one_collection: employees
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 16
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      table: services
+    type: uuid
+relations:
   - collection: appointments
     field: customer
-    related_collection: customers
-    schema:
-      table: appointments
-      column: customer
-      foreign_key_schema: dbo
-      foreign_key_table: customers
-      foreign_key_column: id
-      constraint_name: appointments_customer_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
     meta:
+      junction_field: null
       many_collection: appointments
       many_field: customer
+      one_allowed_collections: null
       one_collection: customers
-      one_field: null
       one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
       one_deselect_action: nullify
-  - collection: customers
+      one_field: null
+      sort_field: null
+    related_collection: customers
+    schema:
+      column: customer
+      constraint_name: appointments_customer_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: customers
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: appointments
+  - collection: appointments
+    field: employee
+    meta:
+      junction_field: null
+      many_collection: appointments
+      many_field: employee
+      one_allowed_collections: null
+      one_collection: employees
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: employees
+    schema:
+      column: employee
+      constraint_name: appointments_employee_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: employees
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: appointments
+  - collection: appointments
+    field: service
+    meta:
+      junction_field: null
+      many_collection: appointments
+      many_field: service
+      one_allowed_collections: null
+      one_collection: services
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: services
+    schema:
+      column: service
+      constraint_name: appointments_service_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: services
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: appointments
+  - collection: appointments
     field: user_created
-    related_collection: directus_users
-    schema:
-      table: customers
-      column: user_created
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: customers_user_created_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
     meta:
-      many_collection: customers
+      junction_field: null
+      many_collection: appointments
       many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
       one_allowed_collections: null
-      junction_field: null
-      sort_field: null
+      one_collection: directus_users
+      one_collection_field: null
       one_deselect_action: nullify
-  - collection: customers
-    field: user_updated
+      one_field: null
+      sort_field: null
     related_collection: directus_users
     schema:
-      table: customers
-      column: user_updated
+      column: user_created
+      constraint_name: appointments_user_created_foreign
+      foreign_key_column: id
       foreign_key_schema: dbo
       foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: customers_user_updated_foreign
-      on_update: NO ACTION
       on_delete: NO ACTION
+      on_update: NO ACTION
+      table: appointments
+  - collection: appointments
+    field: user_updated
     meta:
-      many_collection: customers
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
       junction_field: null
-      sort_field: null
+      many_collection: appointments
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
       one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: appointments_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: appointments
   - collection: customers
     field: account
-    related_collection: directus_users
-    schema:
-      table: customers
-      column: account
-      foreign_key_schema: dbo
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: customers_account_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
     meta:
+      junction_field: null
       many_collection: customers
       many_field: account
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
       one_allowed_collections: null
-      junction_field: null
-      sort_field: null
+      one_collection: directus_users
+      one_collection_field: null
       one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: account
+      constraint_name: customers_account_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: customers
+  - collection: customers
+    field: user_created
+    meta:
+      junction_field: null
+      many_collection: customers
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: customers_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: customers
+  - collection: customers
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: customers
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: customers_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: customers
+  - collection: employees
+    field: account
+    meta:
+      junction_field: null
+      many_collection: employees
+      many_field: account
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: account
+      constraint_name: employees_account_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: employees
+  - collection: employees
+    field: user_created
+    meta:
+      junction_field: null
+      many_collection: employees
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: employees_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: employees
+  - collection: employees
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: employees
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: employees_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: employees
+  - collection: employees_services
+    field: employees_id
+    meta:
+      junction_field: services_id
+      many_collection: employees_services
+      many_field: employees_id
+      one_allowed_collections: null
+      one_collection: employees
+      one_collection_field: null
+      one_deselect_action: delete
+      one_field: services
+      sort_field: null
+    related_collection: employees
+    schema:
+      column: employees_id
+      constraint_name: employees_services_employees_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: employees
+      on_delete: CASCADE
+      on_update: NO ACTION
+      table: employees_services
+  - collection: employees_services
+    field: services_id
+    meta:
+      junction_field: employees_id
+      many_collection: employees_services
+      many_field: services_id
+      one_allowed_collections: null
+      one_collection: services
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: services
+    schema:
+      column: services_id
+      constraint_name: employees_services_services_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: services
+      on_delete: CASCADE
+      on_update: NO ACTION
+      table: employees_services
+  - collection: employeeworkinghours
+    field: employee
+    meta:
+      junction_field: null
+      many_collection: employeeworkinghours
+      many_field: employee
+      one_allowed_collections: null
+      one_collection: employees
+      one_collection_field: null
+      one_deselect_action: delete
+      one_field: workinghours
+      sort_field: null
+    related_collection: employees
+    schema:
+      column: employee
+      constraint_name: employeeworkinghours_employee_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: employees
+      on_delete: CASCADE
+      on_update: NO ACTION
+      table: employeeworkinghours
+  - collection: services
+    field: user_created
+    meta:
+      junction_field: null
+      many_collection: services
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: services_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: services
+  - collection: services
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: services
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: services_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: dbo
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: services

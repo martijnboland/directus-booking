@@ -20,4 +20,5 @@ EXPOSE 8055
 
 CMD \
   npx directus bootstrap && \
+  npx directus schema apply --yes ./snapshots/booking-start.yaml && \
   npx directus start

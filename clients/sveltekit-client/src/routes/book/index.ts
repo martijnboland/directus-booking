@@ -9,7 +9,7 @@ export const get: RequestHandler = async () => {
   });
 
   const employees = await directus.items('employees').readByQuery({
-    fields: ['*', 'account.first_name', 'account.last_name', 'services.services_id', 'workinghours.*']
+    fields: ['*', 'account.first_name', 'account.last_name', 'services.services_id']
   });
 
   return {

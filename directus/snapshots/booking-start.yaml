@@ -147,13 +147,13 @@ collections:
       schema: dbo
 fields:
   - collection: appointments
-    field: EndDateTime
+    field: endDateTime
     meta:
       collection: appointments
       conditions: null
       display: null
       display_options: null
-      field: EndDateTime
+      field: endDateTime
       group: null
       hidden: false
       interface: datetime
@@ -179,19 +179,19 @@ fields:
       is_primary_key: false
       is_unique: false
       max_length: 8
-      name: EndDateTime
+      name: endDateTime
       numeric_precision: 27
       numeric_scale: 7
       table: appointments
     type: dateTime
   - collection: appointments
-    field: StartDateTime
+    field: startDateTime
     meta:
       collection: appointments
       conditions: null
       display: null
       display_options: null
-      field: StartDateTime
+      field: startDateTime
       group: null
       hidden: false
       interface: datetime
@@ -217,7 +217,7 @@ fields:
       is_primary_key: false
       is_unique: false
       max_length: 8
-      name: StartDateTime
+      name: startDateTime
       numeric_precision: 27
       numeric_scale: 7
       table: appointments

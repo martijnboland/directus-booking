@@ -13,7 +13,18 @@
 
   let appointmentDate: string;
 
-  $: console.log('appointmentDate => ', appointmentDate);
+  let timeslots: [];
+
+  async function updateTimeslots() {
+    if (appointmentDate && appointment.service) {
+      let url = `/book/slots?date=${appointmentDate}&service=${appointment.service}`;
+      if (appointment.employee) {
+        url += `&employee=${appointment.employee}`;
+      }
+      var response = await fetch(url);
+      timeslots = (await response.json()).slots;
+    }
+  }
 
 </script>
 
@@ -23,7 +34,7 @@
 
   <p>
     <label for="service">Service</label>
-    <select id="service" name="service" bind:value={appointment.service}>
+    <select id="service" name="service" bind:value={appointment.service} on:change={updateTimeslots}>
       <option>Pick a service</option>
       {#each services as service}
         <option value={service.id}>{service.name}</option>
@@ -33,8 +44,8 @@
 
   <p>
     <label for="employee">Who?</label>
-    <select id="employee" name="employee" bind:value={appointment.employee}>
-      <option>No preference</option>
+    <select id="employee" name="employee" bind:value={appointment.employee} on:change={updateTimeslots}>
+      <option value="">No preference</option>
       {#each employeesForService as employee}
         <option value={employee.id}>{employee.account.first_name} {employee.account.last_name}</option>
       {/each}
@@ -43,7 +54,7 @@
 
   <p>
     <label for="startdatetime">When?</label>
-    <input type="date" bind:value={appointmentDate}>
+    <input type="date" bind:value={appointmentDate} on:change={updateTimeslots}>
   </p>
 
 </form>
